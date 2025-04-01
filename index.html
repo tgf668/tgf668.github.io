@@ -224,15 +224,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
 </div>
 <div class="sidebar-social">
@@ -333,10 +333,67 @@
       <div class="post-wrapper">
   <div class="post-wrap-left" data-aos="fade-up">
     
-      <a class="post-link" href="/2025/03/31/25-3-32-2/" aria-label="[Blog] 更新日志"></a>
+      <a class="post-link" href="/2025/04/01/25-4-1/" aria-label="[CTF] [网鼎杯 2020 青龙组]jocker"></a>
     
     
     <div class="post-cover-left">
+      
+        
+        
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="[CTF] [网鼎杯 2020 青龙组]jocker" class="lazyload">
+        
+      
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2025-04-01</span>
+        <span><span class="icon-pencil"></span>993 字</span>
+        <span><span class="icon-clock"></span>3 分钟</span>
+      </div>
+      <h2 class="post-title">[CTF] [网鼎杯 2020 青龙组]jocker</h2>
+      <article class="post-article">
+        
+          
+SMC  / 栈修复 / 动调
+
+ 分析
+照例先丢exxinfo, 没壳, 运行一下, 复制一下字符串, 拖进IDA, main函数直接出 (图中已经加了些注释)
+
+函数逻辑还是很清晰的:
+
+scanf进flag
+获取flag长度(24)
+将flag的值赋给Des
+wrong() 函数进行第一次判断
+omg() 函数进行第二次判断
+对encrypt进行处理
+encrypt() 函数判断 Des
+finally() 函数判断第二次 Des
+
+接下来看这些具体的函数:
+ wrong:
+
+ omg:
+
+ encrypt:
+
+SMC + 栈平衡
+
+如果点进去, 会发现这个根本不是一个函数, 直接看汇
+        
+      </article>
+    </div>
+  </div>
+</div>
+      
+    
+      <div class="post-wrapper">
+  <div class="post-wrap-right" data-aos="fade-up">
+    
+      <a class="post-link" href="/2025/03/31/25-3-32-2/" aria-label="[Blog] 更新日志"></a>
+    
+    
+    <div class="post-cover-right">
       
         
         
@@ -370,12 +427,12 @@
       
     
       <div class="post-wrapper">
-  <div class="post-wrap-right" data-aos="fade-up">
+  <div class="post-wrap-left" data-aos="fade-up">
     
       <a class="post-link" href="/2025/03/31/25-3-31/" aria-label="[Blog] 待实现的功能"></a>
     
     
-    <div class="post-cover-right">
+    <div class="post-cover-left">
       
         
         
@@ -455,10 +512,10 @@ And More …
     
       <div>
         <span class="icon-brush"></span>
-        169
+        1.2k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:02
+        00:05
       </div>
     
     
@@ -494,15 +551,15 @@ And More …
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">1</div>
+    <div class="sidebar-state-number">2</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
 </div>
 <div class="sidebar-social">
