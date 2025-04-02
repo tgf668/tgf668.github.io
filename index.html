@@ -224,15 +224,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
 </div>
 <div class="sidebar-social">
@@ -329,6 +329,90 @@
   
   
     
+    
+      <div class="post-wrapper">
+  <div class="post-wrap-left" data-aos="fade-up">
+    
+      <a class="post-link" href="/2025/04/02/25-4-2/" aria-label="[CTF] firmware(路由器固件)"></a>
+    
+    
+    <div class="post-cover-left">
+      
+        
+        
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="[CTF] firmware(路由器固件)" class="lazyload">
+        
+      
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2025-04-02</span>
+        <span><span class="icon-pencil"></span>1.2k 字</span>
+        <span><span class="icon-clock"></span>4 分钟</span>
+      </div>
+      <h2 class="post-title">[CTF] firmware(路由器固件)</h2>
+      <article class="post-article">
+        
+          
+路由器固件
+
+ 分析
+ 提取bin文件资源
+上来就是个bin文件(名字改了了)
+
+没怎么见过bin文件, 先丢进exeinfo
+
+告诉我们这是个路由器dump出来的文件, 这里我试着用IDA跑了一下
+
+不出意料的识别不出来, 所以用IDA肯定是无法继续做下去了(个人而言…), 从网上搜工具
+
+了解到分析路由器需要用到binwalk这个工具, 但是在安装过程中…
+原本是按照官方的文档来一步步做的, 但是环境配置一直有问题 （；´д｀）ゞ
+在准备放弃时…
+
+居然翻到了kali官方的文档 !!!
+恰好本机的WSL装的就是kali
+最后还是顺利的安装好了
+运行
+12binwalk -e  --run
+        
+      </article>
+    </div>
+  </div>
+</div>
+      
+    
+      <div class="post-wrapper">
+  <div class="post-wrap-right" data-aos="fade-up">
+    
+      <a class="post-link" href="/2025/04/01/test/" aria-label="picture test"></a>
+    
+    
+    <div class="post-cover-right">
+      
+        
+        
+          <img data-src="https://d-sketon.top/img/backimg/bg1.jpg" data-sizes="auto" alt="picture test" class="lazyload">
+        
+      
+    </div>
+    <div class="post-info">
+      <div class="post-meta">
+        <span><span class="icon-calendar"></span>2025-04-01</span>
+        <span><span class="icon-pencil"></span>0 字</span>
+        <span><span class="icon-clock"></span>1 分钟</span>
+      </div>
+      <h2 class="post-title">picture test</h2>
+      <article class="post-article">
+        
+          
+
+        
+      </article>
+    </div>
+  </div>
+</div>
+      
     
       <div class="post-wrapper">
   <div class="post-wrap-left" data-aos="fade-up">
@@ -512,10 +596,10 @@ And More …
     
       <div>
         <span class="icon-brush"></span>
-        1.2k
+        2.3k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:05
+        00:10
       </div>
     
     
@@ -551,15 +635,15 @@ And More …
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">5</div>
   </div>
 </div>
 <div class="sidebar-social">
