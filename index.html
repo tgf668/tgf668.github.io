@@ -172,6 +172,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a>
+    
     
   </nav>
   
@@ -492,7 +494,7 @@ SMC + 栈平衡
     <div class="post-info">
       <div class="post-meta">
         <span><span class="icon-calendar"></span>2025-03-31</span>
-        <span><span class="icon-pencil"></span>58 字</span>
+        <span><span class="icon-pencil"></span>88 字</span>
         <span><span class="icon-clock"></span>1 分钟</span>
       </div>
       <h2 class="post-title">[Blog] 更新日志</h2>
@@ -501,9 +503,14 @@ SMC + 栈平衡
            记录博客的发展
 
  V0.0.1 Beta
+ 2025/4/26
+
+解决了博客所有的图片的加载问题
+更新了自定义鼠标
+
  2025/4/12
 
-修复了图片显示问题
+修复了文章插入图片显示问题
 修复了某些文章 tag / categories 分类错误问题
 
  2025/3/31
@@ -705,6 +712,22 @@ And More …
 
     </div>
     
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png"/>
+        </div>
+      </div>
+    
     
     
     
@@ -746,6 +769,34 @@ And More …
 
 
 
+
+
+  <script>
+    var ALGOLIA_CONFIG = {
+      logo: "/images/algolia_logo.svg",
+      algolia: {
+        applicationID: "JUZ7GOX38H",
+        apiKey: "8be753c0c3d70de624fc33b8c95d4610",
+        indexName: "AfterRain",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
+  
+<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js" integrity="sha384-xvLS0jfKuoREs7pqkRI&#x2F;OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk" crossorigin="anonymous" defer></script>
+
+  
+<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js" integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn&#x2F;Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J" crossorigin="anonymous" defer></script>
+
+  
+<script src="/js/algolia_search.js" defer></script>
 
 
 
