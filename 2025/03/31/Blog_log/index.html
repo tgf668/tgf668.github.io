@@ -40,7 +40,7 @@
   </script>
 
 
-  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功 ~ (*^▽^*)","fail":"复制失败 !!! (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://skipshot.cn';</script>
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功 ~ (*^▽^*)","fail":"复制失败 !!! (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://skipshot.cn';</script>
   
   <title>
     [Blog] 更新日志 |
@@ -153,15 +153,6 @@
 <div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
 </div>
 
-
-  <div class="notification-wrapper">
-    <h1>博客有新内容啦!</h1>
-    <p>更新你的缓存获得新内容(●&#39;◡&#39;●)~</p>
-    <div class="notification-btn">
-      <button id="notification-update-btn">点我更新ovo</button>
-      <button id="notification-close-btn">点旁边那个#-#</button>
-    </div>
-  </div>
 
     <div id="container">
       <div id="wrap">
@@ -1292,9 +1283,15 @@
 
 
 
-  
-<script src="/js/service_worker.js"></script>
-
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
 
 
 
