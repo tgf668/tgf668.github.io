@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2025-08-15T15:11:34.910Z</updated>
+  <updated>2025-08-15T15:24:06.194Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -21,11 +21,17 @@
     <link href="https://skipshot.cn/2025/08/15/Learn-25-8-15/"/>
     <id>https://skipshot.cn/2025/08/15/Learn-25-8-15/</id>
     <published>2025-08-15T15:09:10.000Z</published>
-    <updated>2025-08-15T15:11:34.910Z</updated>
+    <updated>2025-08-15T15:24:06.194Z</updated>
+    
+    
+    <summary type="html">Hello Linux</summary>
     
     
     
+    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
     
+    
+    <category term="Linux" scheme="https://skipshot.cn/tags/Linux/"/>
     
   </entry>
   
