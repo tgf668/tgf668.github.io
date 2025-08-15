@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>寂静の - 永恒秋之森 -</title>
+  
+  <subtitle>After a Silent Rain...</subtitle>
+  <link href="https://skipshot.cn/atom.xml" rel="self"/>
+  
+  <link href="https://skipshot.cn/"/>
+  <updated>2025-08-12T11:23:11.742Z</updated>
+  <id>https://skipshot.cn/</id>
+  
+  <author>
+    <name>SkipShot</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Blog] 如何自定义你的博客</title>
+    <link href="https://skipshot.cn/2025/07/04/Blog-Migration/"/>
+    <id>https://skipshot.cn/2025/07/04/Blog-Migration/</id>
+    <published>2025-07-03T22:04:49.000Z</published>
+    <updated>2025-08-12T11:23:11.742Z</updated>
+    
+    
+    <summary type="html">防止自己忘了</summary>
+    
+    
+    
+    <category term="Blog" scheme="https://skipshot.cn/categories/Blog/"/>
+    
+    
+    <category term="tech" scheme="https://skipshot.cn/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Writing] 四时而不惑</title>
+    <link href="https://skipshot.cn/2025/05/22/Writing-25-4-28/"/>
+    <id>https://skipshot.cn/2025/05/22/Writing-25-4-28/</id>
+    <published>2025-05-22T01:19:38.000Z</published>
+    <updated>2025-08-12T07:04:09.441Z</updated>
+    
+    
+    <summary type="html">大学一年我学到了什么...</summary>
+    
+    
+    
+    <category term="Writing" scheme="https://skipshot.cn/categories/Writing/"/>
+    
+    
+    <category term="Life" scheme="https://skipshot.cn/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Picture] 无意识的野炊</title>
+    <link href="https://skipshot.cn/2025/05/03/Picture-25-5-3/"/>
+    <id>https://skipshot.cn/2025/05/03/Picture-25-5-3/</id>
+    <published>2025-05-02T16:12:48.000Z</published>
+    <updated>2025-08-12T07:04:09.441Z</updated>
+    
+    
+    <summary type="html">晒晒太阳真好啊~尸斑都淡了...</summary>
+    
+    
+    
+    <category term="Picture" scheme="https://skipshot.cn/categories/Picture/"/>
+    
+    
+    <category term="Life" scheme="https://skipshot.cn/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Writing] 春日拂晓</title>
+    <link href="https://skipshot.cn/2025/04/14/Writing-25-4-14/"/>
+    <id>https://skipshot.cn/2025/04/14/Writing-25-4-14/</id>
+    <published>2025-04-14T10:54:04.000Z</published>
+    <updated>2025-08-12T07:04:09.441Z</updated>
+    
+    
+    <summary type="html">现在我已经学会如何读书了,那么该学习生活了...</summary>
+    
+    
+    
+    <category term="Writing" scheme="https://skipshot.cn/categories/Writing/"/>
+    
+    
+    <category term="Life" scheme="https://skipshot.cn/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CTF] firmware(路由器固件)</title>
+    <link href="https://skipshot.cn/2025/04/02/25-4-2/"/>
+    <id>https://skipshot.cn/2025/04/02/25-4-2/</id>
+    <published>2025-04-02T13:38:07.000Z</published>
+    <updated>2025-08-12T07:04:09.441Z</updated>
+    
+    
+    <summary type="html">不一样的逆向思路捏,偏取证?!</summary>
+    
+    
+    
+    <category term="CTF" scheme="https://skipshot.cn/categories/CTF/"/>
+    
+    
+    <category term="Wp" scheme="https://skipshot.cn/tags/Wp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CTF] [网鼎杯 2020 青龙组]</title>
+    <link href="https://skipshot.cn/2025/04/01/25-4-1/"/>
+    <id>https://skipshot.cn/2025/04/01/25-4-1/</id>
+    <published>2025-04-01T01:48:21.000Z</published>
+    <updated>2025-08-12T07:04:09.440Z</updated>
+    
+    
+    <summary type="html">SMC  / 栈修复 / 动调  果然这种题目还得多练才会做</summary>
+    
+    
+    
+    <category term="CTF" scheme="https://skipshot.cn/categories/CTF/"/>
+    
+    
+    <category term="Wp" scheme="https://skipshot.cn/tags/Wp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Blog] 更新日志</title>
+    <link href="https://skipshot.cn/2025/03/31/Blog-log/"/>
+    <id>https://skipshot.cn/2025/03/31/Blog-log/</id>
+    <published>2025-03-31T11:29:12.000Z</published>
+    <updated>2025-08-12T07:04:09.441Z</updated>
+    
+    
+    <summary type="html">记录博客的大大小小更新内容~</summary>
+    
+    
+    
+    <category term="Blog" scheme="https://skipshot.cn/categories/Blog/"/>
+    
+    
+    <category term="Log" scheme="https://skipshot.cn/tags/Log/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Blog] 待实现的功能</title>
+    <link href="https://skipshot.cn/2025/03/31/Blog-project/"/>
+    <id>https://skipshot.cn/2025/03/31/Blog-project/</id>
+    <published>2025-03-31T10:32:45.000Z</published>
+    <updated>2025-08-12T07:04:09.441Z</updated>
+    
+    
+    <summary type="html">大饼...也许呢(笑)</summary>
+    
+    
+    
+    <category term="Blog" scheme="https://skipshot.cn/categories/Blog/"/>
+    
+    
+    <category term="Project" scheme="https://skipshot.cn/tags/Project/"/>
+    
+  </entry>
+  
+</feed>
