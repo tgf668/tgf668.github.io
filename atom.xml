@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2025-08-16T10:34:23.864Z</updated>
+  <updated>2025-08-18T15:08:10.014Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -17,22 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[Learn] Vim操作学习笔记</title>
+    <link href="https://skipshot.cn/2025/08/18/Learn-25-8-18/"/>
+    <id>https://skipshot.cn/2025/08/18/Learn-25-8-18/</id>
+    <published>2025-08-18T11:27:50.000Z</published>
+    <updated>2025-08-18T15:08:10.014Z</updated>
+    
+    
+    <summary type="html">就像刚刚学打字的样子</summary>
+    
+    
+    
+    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
+    
+    
+    <category term="Linux" scheme="https://skipshot.cn/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[Learn] 正则表达式学习笔记</title>
     <link href="https://skipshot.cn/2025/08/16/Learn-25-8-16/"/>
     <id>https://skipshot.cn/2025/08/16/Learn-25-8-16/</id>
     <published>2025-08-16T10:16:23.000Z</published>
-    <updated>2025-08-16T10:34:23.864Z</updated>
+    <updated>2025-08-18T15:06:11.521Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;参考教程 ：&lt;a</summary>
-        
-      
+    <summary type="html">难学但好用</summary>
     
     
     
