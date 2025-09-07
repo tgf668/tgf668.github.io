@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2025-08-18T15:08:10.014Z</updated>
+  <updated>2025-09-07T16:36:54.013Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[Learn] 秋冬周记</title>
+    <link href="https://skipshot.cn/2025/09/07/Learn-25-9-7/"/>
+    <id>https://skipshot.cn/2025/09/07/Learn-25-9-7/</id>
+    <published>2025-09-07T14:22:32.000Z</published>
+    <updated>2025-09-07T16:36:54.013Z</updated>
+    
+    
+    <summary type="html">周更！</summary>
+    
+    
+    
+    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
+    
+    
+    <category term="log" scheme="https://skipshot.cn/tags/log/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[Learn] Vim操作学习笔记</title>
     <link href="https://skipshot.cn/2025/08/18/Learn-25-8-18/"/>
     <id>https://skipshot.cn/2025/08/18/Learn-25-8-18/</id>
     <published>2025-08-18T11:27:50.000Z</published>
-    <updated>2025-08-18T15:08:10.014Z</updated>
+    <updated>2025-09-07T16:40:05.057Z</updated>
     
     
     <summary type="html">就像刚刚学打字的样子</summary>
@@ -40,7 +59,7 @@
     <link href="https://skipshot.cn/2025/08/16/Learn-25-8-16/"/>
     <id>https://skipshot.cn/2025/08/16/Learn-25-8-16/</id>
     <published>2025-08-16T10:16:23.000Z</published>
-    <updated>2025-08-18T15:06:11.521Z</updated>
+    <updated>2025-09-07T16:39:48.311Z</updated>
     
     
     <summary type="html">难学但好用</summary>
@@ -59,7 +78,7 @@
     <link href="https://skipshot.cn/2025/08/15/Learn-25-8-15/"/>
     <id>https://skipshot.cn/2025/08/15/Learn-25-8-15/</id>
     <published>2025-08-15T15:09:10.000Z</published>
-    <updated>2025-08-15T16:41:09.045Z</updated>
+    <updated>2025-09-07T16:40:15.312Z</updated>
     
     
     <summary type="html">Hello Linux</summary>
@@ -78,7 +97,7 @@
     <link href="https://skipshot.cn/2025/07/04/Blog-Migration/"/>
     <id>https://skipshot.cn/2025/07/04/Blog-Migration/</id>
     <published>2025-07-03T22:04:49.000Z</published>
-    <updated>2025-08-12T11:23:11.742Z</updated>
+    <updated>2025-09-07T16:46:25.607Z</updated>
     
     
     <summary type="html">防止自己忘了</summary>
@@ -192,7 +211,7 @@
     <link href="https://skipshot.cn/2025/03/31/Blog-log/"/>
     <id>https://skipshot.cn/2025/03/31/Blog-log/</id>
     <published>2025-03-31T11:29:12.000Z</published>
-    <updated>2025-08-17T07:03:13.031Z</updated>
+    <updated>2025-09-07T15:44:40.118Z</updated>
     
     
     <summary type="html">记录博客的大大小小更新内容~</summary>
