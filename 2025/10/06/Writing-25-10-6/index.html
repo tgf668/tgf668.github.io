@@ -43,7 +43,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功 ~ (*^▽^*)","fail":"复制失败 !!! (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://skipshot.cn';</script>
   
   <title>
-    [Learn] AFL++学习笔记 |
+    [Writing] 一道逆向题的诞生 |
     
     寂静の - 永恒秋之森 -
   </title>
@@ -63,22 +63,18 @@
 
   
   
-    <meta name="description" content="what is AFL++？？？">
+    <meta name="description" content="出题后的碎碎念">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Learn] AFL++学习笔记">
-<meta property="og:url" content="https://skipshot.cn/2025/09/23/Learn-25-9-23/index.html">
+<meta property="og:title" content="[Writing] 一道逆向题的诞生">
+<meta property="og:url" content="https://skipshot.cn/2025/10/06/Writing-25-10-6/index.html">
 <meta property="og:site_name" content="寂静の - 永恒秋之森 -">
-<meta property="og:description" content="what is AFL++？？？">
+<meta property="og:description" content="出题后的碎碎念">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://golden-forest.top/b55afcd55fdbff11adf34f213af36ff3.png">
-<meta property="og:image" content="https://golden-forest.top/d63714f69abc6e37ce5517e24b7e2acc.png">
-<meta property="og:image" content="https://golden-forest.top/d83e780d6bbeda0b91a6f58d0f3a753b.png">
-<meta property="article:published_time" content="2025-09-23T03:55:00.000Z">
-<meta property="article:modified_time" content="2025-10-03T07:02:21.437Z">
+<meta property="article:published_time" content="2025-10-06T08:51:40.000Z">
+<meta property="article:modified_time" content="2025-10-06T09:09:02.895Z">
 <meta property="article:author" content="SkipShot">
-<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Re">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://golden-forest.top/b55afcd55fdbff11adf34f213af36ff3.png">
   
   
     <link rel="alternate" href="/atom.xml" title="寂静の - 永恒秋之森 -" type="application/atom+xml">
@@ -217,7 +213,7 @@
 <header id="header">
   
     <picture></picture>
-    <img  fetchpriority="high" src="https://golden-forest.top/be1b9628a89f72b71e72f288e80320db.jpg" alt="[Learn] AFL++学习笔记">
+    <img  fetchpriority="high" src="https://golden-forest.top/a30026d86f9b45f5eb5f8684eb042df8.jpg" alt="[Writing] 一道逆向题的诞生">
   
   <div id="header-outer">
     <div id="header-title">
@@ -225,7 +221,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">[Learn] AFL++学习笔记</h1>
+            <h1 data-aos="slide-up">[Writing] 一道逆向题的诞生</h1>
           </a>
         
       
@@ -252,7 +248,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-number">2.</span> <span class="toc-text"> 目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e1"><span class="toc-number">3.</span> <span class="toc-text"> E1</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%81%93%E9%80%86%E5%90%91%E9%A2%98%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.</span> <span class="toc-text"> 一道逆向题的诞生</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%9D%90%E4%B8%8D%E8%90%BD%E7%AA%A0%E8%87%BC%E7%9A%84%E5%9B%B0%E9%9A%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> 题材?不落窠臼的困难</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 时间?项目管理的重要性:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E8%BF%87%E5%BA%A6%E6%83%B3%E6%B3%95%E7%9A%84%E5%9D%8F%E5%A4%84"><span class="toc-number">1.3.</span> <span class="toc-text"> 创新?过度想法的坏处:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%BB%BB%E9%87%8D%E9%81%93%E8%BF%9C%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.4.</span> <span class="toc-text"> 总结?任重道远的学习:</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -340,19 +336,19 @@
   
 </aside>
 
-          <section id="main"><article id="post-Learn-25-9-23" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main"><article id="post-Writing-25-10-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
-    <time datetime="2025-09-23T03:55:00.000Z" itemprop="datePublished">2025-09-23</time>
-    <time style="display: none;" id="post-update-time">2025-10-03</time>
+    <time datetime="2025-10-06T08:51:40.000Z" itemprop="datePublished">2025-10-06</time>
+    <time style="display: none;" id="post-update-time">2025-10-06</time>
   </span>
 </div>
 
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Learn/" data-aos="zoom-in">Learn</a>
+    <a class="article-category-link" href="/categories/Writing/" data-aos="zoom-in">Writing</a>
   </div>
 
 
@@ -363,32 +359,24 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
-<p>系统环境：</p>
-<ul>
-<li>主windows系统 + WSL2 + kali + docker desktop</li>
-<li>使用docker版的AFL++</li>
-<li>在kali环境中跑docker，其余工具放也在了kali中</li>
-</ul>
-<p>具体配置参考教程: <a target="_blank" rel="noopener" href="https://github.com/alex-maleno/Fuzzing-Module#">https://github.com/alex-maleno/Fuzzing-Module#</a></p>
-<p>本次学习所用到的案例也是源于这个项目</p>
-<h2 id="目标"><a class="markdownIt-Anchor" href="#目标"></a> 目标</h2>
-<ul>
-<li>完成项目中的三个exercise来学习AFL++的用法</li>
-<li>学会使用gbd分析崩溃</li>
-<li>学会使用Sourcetrail工具阅读定位源码漏洞</li>
-<li>完成上述三个小目标积累漏洞挖掘的前置学习工作</li>
-</ul>
-<h2 id="e1"><a class="markdownIt-Anchor" href="#e1"></a> E1</h2>
-<p>第一个训练步骤教程写得非常详细了，跟着一步步走不会出错的，遇上的很多不懂的命令可以问AI</p>
-<p>（结果花了一整体去配置这玩意。。。主要原因是docker不会用）</p>
-<p>到了这步↓就算可以开始正式尝试使用AFL++了</p>
-<p><img src="https://golden-forest.top/b55afcd55fdbff11adf34f213af36ff3.png" alt="" /></p>
-<p>运行教程的代码，成功弹出AFL的UI↓（图中已经是跑了一会了）</p>
-<p><img src="https://golden-forest.top/d63714f69abc6e37ce5517e24b7e2acc.png" alt="" /></p>
-<p>得到了三个崩溃，可以ctrl + c中断运行了，并得到了out文件↓</p>
-<p><img src="https://golden-forest.top/d83e780d6bbeda0b91a6f58d0f3a753b.png" alt="" /></p>
-<p>接下来就是分析这些个文件找到漏洞位置了</p>
+        <h2 id="一道逆向题的诞生"><a class="markdownIt-Anchor" href="#一道逆向题的诞生"></a> 一道逆向题的诞生</h2>
+<p>经历了长达20+小时的编写后，终于在本周结束前把题目给赶出来了……</p>
+<p>这也是我人生中第一次出题。事实上，难度之大确实是超乎了我的想象，且听我慢慢谈谈我的心路历程。</p>
+<h3 id="题材不落窠臼的困难"><a class="markdownIt-Anchor" href="#题材不落窠臼的困难"></a> 题材?不落窠臼的困难</h3>
+<p>想出一道题，那么首先就得有考点。</p>
+<p>原先，和社团里的小伙伴决定出一道diff方向的题目，想法是用户利用bindiff工具来找出代码中的不同。原先的计划是:同一个源文件，在几段代码或者文本处修改一下，让用户们找不同，但是做到一半发现，这样倒成为了bindiff专属题，简单是简单了，但好像和逆向也没多大关系了。于是便光速放弃了原计划，打算出一道和逆向有关联的题。</p>
+<p>碰巧，最近就在研究非对称加密的有关知识，“为什么不设计一道RSA相关的题目?！”把密文藏代码里，让选手通过逆向获得;把私钥藏在修改的代码里，让选手利用bindiff工具来加快解题。我马上开始着手源代码的编写。</p>
+<h3 id="时间项目管理的重要性"><a class="markdownIt-Anchor" href="#时间项目管理的重要性"></a> 时间?项目管理的重要性:</h3>
+<p>很快我意识到，这样做会不会难度偏大?是的，我的目的是出一道新手也能做的逆向题，来让选手能从中学习bindiff这个工具的用法，但是，一旦把RSA这种非对称加密联系在一起，这对一个零基础的选手或许才更是挑战。</p>
+<p>我便开始尝试优化代码结构，加各种小提示，来让选手意识到这段密文是被什么加密了，同时故意放出加密解密函数，希望他们能看懂这种加密方式是非对称的(当然，考虑的是那种还不懂的把代码结构丢给ai问出来这是哪种加密类型的人)。</p>
+<p>而这样做的结果，当然是工期的无限增加，我需要考虑如何加一个tips才不会显得过于明显，也需要在代码逻辑上优化，不会让编译出来的可执行文件过于臃肿，原计划在周三晚上放出的题目，被延后到周四，而周四挤满的课表又只能让我在碎片时间里完成工作，同时还要兼顾每个函数的实现测试，确保不会出现各种bug……</p>
+<p>直到周四十一十二点，我才初步将整个代码框架搭建完毕，而最终的编译与测试工作，还是得到周五完成了。</p>
+<h3 id="创新过度想法的坏处"><a class="markdownIt-Anchor" href="#创新过度想法的坏处"></a> 创新?过度想法的坏处:</h3>
+<p>直到题目完成前，我仍有蛮多的想法想添加在题目中，比如加一个反调试来防止选手动态搞出私钥，又或者添加一点动态编码，来让选手理解静态分析是不能解决所以问题的……对我来说，这些小trick对入门逆向或许“有帮助”，但从选手角度出发，一道入门题有着过多而且毫不相关的知识点无疑是一道令人恶心的题目(就我而言，深受其害)，所以那个“这是一道简单题”的想法，成功阻止我过多杂糅题目。</p>
+<p>当然有些想法还是被添加进去了，也是在题目上新之后，静下来自己带入选手做了一遍，才感觉这道题目并没有我想象得那么“有意思”，许多地方是为了出题而出，所以就现在的个人而言，这其实算是一道蛮失败的题目。</p>
+<h3 id="总结任重道远的学习"><a class="markdownIt-Anchor" href="#总结任重道远的学习"></a> 总结?任重道远的学习:</h3>
+<p>总结下来，这不算一道好题，也不算一次好的创作经历。要是有什么想说的，那就是个人水平还是远远不足的，至少还不足以作为一名老手去传授新手知识。</p>
+<p>确实，相比起这些选手，我也不过是多学了半年。不过，其实这次题目的创作让我从另一个角度思考起逆向:任何题目，都是出题人专心挖好了一条能得解的道路，作为比赛选手，其实能做到只是挖出这条路。但是如果放在现实世界呢？在各种加密、混淆的代码面前，可不会留下某个做烂的知识点，程序庞大的架构，也远远不止一个RSA加密那么简单……逆向工程作为漏洞挖掘的必备技能，如果只会解解别人故意留下来的路，那或许成为不了真正的逆向工程师……</p>
 
       
     </div>
@@ -402,7 +390,7 @@
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Note/" rel="tag">Note</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Re/" rel="tag">Re</a></li></ul>
 
 
     </footer>
@@ -410,31 +398,17 @@
   
   <nav id="article-nav" data-aos="fade-up">
     
-      
-      <div class="article-nav-link-wrap article-nav-link-left">
-        
-          <img data-src="https://golden-forest.top/e4393ffa6789bd9e8af554d1dfa515c6.jpg" data-sizes="auto" alt="[Learn] 十道漏洞复现" class="lazyload">
-        
-        <a href="/2025/10/02/Learn-25-10-2/"></a>
-        <div class="article-nav-caption">前一篇</div>
-        <h3 class="article-nav-title">
-          
-            [Learn] 十道漏洞复现
-          
-        </h3>
-      </div>
-    
     
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
-        <img data-src="https://golden-forest.top/2025/09/18e11e3a00ed08cbd781de0100113958.png" data-sizes="auto" alt="[Learn] 秋冬周记" class="lazyload">
+        <img data-src="https://golden-forest.top/e4393ffa6789bd9e8af554d1dfa515c6.jpg" data-sizes="auto" alt="[Learn] 十道漏洞复现" class="lazyload">
       
-      <a href="/2025/09/07/Learn-25-9-7/"></a>
+      <a href="/2025/10/02/Learn-25-10-2/"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
         
-          [Learn] 秋冬周记
+          [Learn] 十道漏洞复现
         
       </h3>
     </div>
@@ -540,7 +514,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87"><span class="toc-number">2.</span> <span class="toc-text"> 目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e1"><span class="toc-number">3.</span> <span class="toc-text"> E1</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%81%93%E9%80%86%E5%90%91%E9%A2%98%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.</span> <span class="toc-text"> 一道逆向题的诞生</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E6%9D%90%E4%B8%8D%E8%90%BD%E7%AA%A0%E8%87%BC%E7%9A%84%E5%9B%B0%E9%9A%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> 题材?不落窠臼的困难</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 时间?项目管理的重要性:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E8%BF%87%E5%BA%A6%E6%83%B3%E6%B3%95%E7%9A%84%E5%9D%8F%E5%A4%84"><span class="toc-number">1.3.</span> <span class="toc-text"> 创新?过度想法的坏处:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%BB%BB%E9%87%8D%E9%81%93%E8%BF%9C%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.4.</span> <span class="toc-text"> 总结?任重道远的学习:</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -884,14 +858,14 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "SkipShot",
-          title: "[Learn] AFL++学习笔记",
-          url: "https://skipshot.cn/2025/09/23/Learn-25-9-23/",
-          excerpt: "what is AFL++？？？",
+          title: "[Writing] 一道逆向题的诞生",
+          url: "https://skipshot.cn/2025/10/06/Writing-25-10-6/",
+          excerpt: "出题后的碎碎念",
           description: "",
-          stripContent: " 安装 系统环境：  主windows系统 + WSL2 + kali + docker desktop 使用docker版的AFL++ 在kali环境中跑docker，其余工具放也在了kali中  具体配置参考教程: https://github.com/alex-maleno/Fuzzing-Module# 本次学习所用到的案例也是源于这个项目  目标  完成项目中的三个exercise来学习AFL++的用法 学会使用gbd分析崩溃 学会使用Sourcetrail工具阅读定位源码漏洞 完成上",
-          date: "Tue Sep 23 2025 11:55:00 GMT+0800",
-          updated: "Fri Oct 03 2025 15:02:21 GMT+0800",
-          cover: "https://golden-forest.top/be1b9628a89f72b71e72f288e80320db.jpg",
+          stripContent: " 一道逆向题的诞生 经历了长达20+小时的编写后，终于在本周结束前把题目给赶出来了…… 这也是我人生中第一次出题。事实上，难度之大确实是超乎了我的想象，且听我慢慢谈谈我的心路历程。  题材?不落窠臼的困难 想出一道题，那么首先就得有考点。 原先，和社团里的小伙伴决定出一道diff方向的题目，想法是用户利用bindiff工具来找出代码中的不同。原先的计划是:同一个源文件，在几段代码或者文本处修改一下，让用户们找不同，但是做到一半发现，这样倒成为了bindiff专属题，简单是简单了，但好像和逆向也没",
+          date: "Mon Oct 06 2025 16:51:40 GMT+0800",
+          updated: "Mon Oct 06 2025 17:09:02 GMT+0800",
+          cover: "https://golden-forest.top/a30026d86f9b45f5eb5f8684eb042df8.jpg",
         };
       </script>
        
