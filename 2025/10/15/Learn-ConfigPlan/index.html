@@ -71,7 +71,7 @@
 <meta property="og:description" content="仅个人习惯配置~">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-15T11:56:26.000Z">
-<meta property="article:modified_time" content="2025-10-19T16:55:26.442Z">
+<meta property="article:modified_time" content="2025-10-20T14:45:11.449Z">
 <meta property="article:author" content="SkipShot">
 <meta property="article:tag" content="config">
 <meta name="twitter:card" content="summary">
@@ -212,16 +212,8 @@
 </div>
 <header id="header">
   
-    
-      
-        <picture>
-          
-        </picture>
-        
-          <img  fetchpriority="high" src="/images/banner.webp" alt="[Leran] 笔电工作配置方案">
-        
-      
-    
+    <picture></picture>
+    <img  fetchpriority="high" src="https://golden-forest.top/625a4160a19dd391c14f1f92eb357493.jpg" alt="[Leran] 笔电工作配置方案">
   
   <div id="header-outer">
     <div id="header-title">
@@ -387,16 +379,19 @@
 <h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
 <p>个人的一些常用工具，介绍安装方法以及用到的插件，配置细则就不再这介绍了</p>
 <h3 id="nvimubuntu"><a class="markdownIt-Anchor" href="#nvimubuntu"></a> Nvim（Ubuntu）</h3>
+<blockquote>
+<p>要写的条目有些多，等有时间再更ƪ(˘⌣˘)ʃ</p>
+</blockquote>
 <h3 id="yaziubuntu"><a class="markdownIt-Anchor" href="#yaziubuntu"></a> Yazi（Ubuntu）</h3>
 <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/sxyazi/yazi">https://github.com/sxyazi/yazi</a></p>
 <p>首先要有rust环境，由于我是WSL2，按照官方的提示，直接在子系统中运行一下命令即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --proto <span class="string">&#x27;=https&#x27;</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh</span><br></pre></td></tr></table></figure>
 <p>然后根据指示安装即可</p>
 <p>接着去yazi官网，运行以下命令下载yazi:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/zsh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># yazi需要file这个工具，先检查一下有没有，没有就装</span></span><br><span class="line">file -verison</span><br><span class="line"><span class="comment"># sudo install file</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下为yazi推荐的其他工具，可以启用yazi更多的功能</span></span><br><span class="line"><span class="comment"># sudo apt update</span></span><br><span class="line"><span class="comment"># sudo apt install ffmpeg </span></span><br><span class="line"><span class="comment"># sudo apt install p7zip-full</span></span><br><span class="line"><span class="comment"># sudo apt install jq</span></span><br><span class="line"><span class="comment"># sudo apt install poppler-utils</span></span><br><span class="line"><span class="comment"># sudo apt install fd-find</span></span><br><span class="line"><span class="comment"># sudo apt install ripgrep</span></span><br><span class="line"><span class="comment"># sudo apt install fzf</span></span><br><span class="line"><span class="comment"># curl -sSfL </span></span><br><span class="line">https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh</span><br><span class="line"><span class="comment"># 上面的那个工具还需要做一步，在.zshrc中加入：</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(zoxide init zsh)</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo apt install xclip</span></span><br><span class="line"><span class="comment"># sudo apt install imagemagick</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 正式开始安装yazi，由于官方没有做打包，所以直接下载编译好的二进制文件</span></span><br><span class="line">wget -qO yazi.zip https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip</span><br><span class="line">unzip -q yazi.zip -d yazi-temp</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> yazi-temp/*/&#123;ya,yazi&#125; /usr/local/bin</span><br><span class="line"><span class="built_in">rm</span> -rf yazi-temp yazi.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测</span></span><br><span class="line">yazi --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除操作</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /usr/local/bin/&#123;ya,yazi&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里还可以为yazi配置一个函数用于替代cd（太好用了！！！）</span></span><br><span class="line"><span class="comment"># 这里用的是zsh，不同shell</span></span><br><span class="line">请参考https://yazi-rs.github.io/docs/quick-start/#shell-wrapper</span><br><span class="line"><span class="comment">#将下面这一段粘贴到.zshrc中:</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">y</span></span>() &#123;</span><br><span class="line">	<span class="built_in">local</span> tmp=<span class="string">&quot;<span class="subst">$(mktemp -t <span class="string">&quot;yazi-cwd.XXXXXX&quot;</span>)</span>&quot;</span> cwd</span><br><span class="line">	yazi <span class="string">&quot;<span class="variable">$@</span>&quot;</span> --cwd-file=<span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">	IFS= <span class="built_in">read</span> -r -d <span class="string">&#x27;&#x27;</span> cwd &lt; <span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">	[ -n <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span> ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span> != <span class="string">&quot;<span class="variable">$PWD</span>&quot;</span> ] &amp;&amp; <span class="built_in">builtin</span> <span class="built_in">cd</span> -- <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span></span><br><span class="line">	<span class="built_in">rm</span> -f -- <span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yazi需要file这个工具，先检查一下有没有，没有就装</span></span><br><span class="line">file -verison</span><br><span class="line"><span class="comment"># sudo install file</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下为yazi推荐的其他工具，可以启用yazi更多的功能</span></span><br><span class="line"><span class="comment"># sudo apt update</span></span><br><span class="line"><span class="comment"># sudo apt install ffmpeg </span></span><br><span class="line"><span class="comment"># sudo apt install p7zip-full</span></span><br><span class="line"><span class="comment"># sudo apt install jq</span></span><br><span class="line"><span class="comment"># sudo apt install poppler-utils</span></span><br><span class="line"><span class="comment"># sudo apt install fd-find</span></span><br><span class="line"><span class="comment"># sudo apt install ripgrep</span></span><br><span class="line"><span class="comment"># sudo apt install fzf</span></span><br><span class="line"><span class="comment"># curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh</span></span><br><span class="line"><span class="comment"># 上面的那个工具还需要做一步，在.zshrc中加入：</span></span><br><span class="line"><span class="comment"># eval &quot;$(zoxide init zsh)&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo apt install xclip</span></span><br><span class="line"><span class="comment"># sudo apt install imagemagick</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 正式开始安装yazi，由于官方没有做打包，所以直接下载编译好的二进制文件</span></span><br><span class="line">wget -qO yazi.zip https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip</span><br><span class="line">unzip -q yazi.zip -d yazi-temp</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> yazi-temp/*/&#123;ya,yazi&#125; /usr/local/bin</span><br><span class="line"><span class="built_in">rm</span> -rf yazi-temp yazi.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测</span></span><br><span class="line">yazi --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除操作</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /usr/local/bin/&#123;ya,yazi&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里还可以为yazi配置一个函数用于替代cd（太好用了！！！）</span></span><br><span class="line"><span class="comment"># 这里用的是zsh，不同shell</span></span><br><span class="line">请参考https://yazi-rs.github.io/docs/quick-start/#shell-wrapper</span><br><span class="line"><span class="comment">#将下面这一段粘贴到.zshrc中:</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">y</span></span>() &#123;</span><br><span class="line">	<span class="built_in">local</span> tmp=<span class="string">&quot;<span class="subst">$(mktemp -t <span class="string">&quot;yazi-cwd.XXXXXX&quot;</span>)</span>&quot;</span> cwd</span><br><span class="line">	yazi <span class="string">&quot;<span class="variable">$@</span>&quot;</span> --cwd-file=<span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">	IFS= <span class="built_in">read</span> -r -d <span class="string">&#x27;&#x27;</span> cwd &lt; <span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">	[ -n <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span> ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span> != <span class="string">&quot;<span class="variable">$PWD</span>&quot;</span> ] &amp;&amp; <span class="built_in">builtin</span> <span class="built_in">cd</span> -- <span class="string">&quot;<span class="variable">$cwd</span>&quot;</span></span><br><span class="line">	<span class="built_in">rm</span> -f -- <span class="string">&quot;<span class="variable">$tmp</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="nushell-windows"><a class="markdownIt-Anchor" href="#nushell-windows"></a> Nushell （Windows）</h3>
 <blockquote>
-<p>由于其不支持POSIX，在linux上使用bash脚本太麻烦了，于是换zsh了</p>
+<p>由于其不支持POSIX，在linux上使用bash脚本太麻烦了，于是只在Windows上用了，但是这里的安装及配置还是根据Linux来的（懒得改了~）</p>
 </blockquote>
 <p>同样也是要装rust先，我是WSL，所以：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --proto <span class="string">&#x27;=https&#x27;</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh</span><br></pre></td></tr></table></figure>
@@ -435,7 +430,7 @@
 <p>由于我们使用stow作为符号链接的工具，其作用就是将一个文件夹中的所有文件到指定的地方建立符号链接（和windows快捷方式作用差不多）</p>
 <p>而其默认指令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stow &lt;Folder&gt;</span><br></pre></td></tr></table></figure>
-<p>会将这个文件夹向上一层指定，例如在 <code>~/dotfile</code>中有个一个文件夹 <code>config </code>，其中还有个文件夹 <code>.config </code>，然后在 <code>~/dotfile </code>中输入   <code>stow config </code>,这样 家目录下的 <code> ~/.config</code> 就会指向 <code>~/dotfile/.config</code></p>
+<p>会将这个文件夹向上一层指定，例如在 <code>~/dotfile</code>中有个一个文件夹 <code>config</code>，其中还有个文件夹 <code>.config </code>，然后在 <code>~/dotfile </code>中输入   <code>stow config </code>,这样 家目录下的 <code> ~/.config</code> 就会指向 <code>~/dotfile/.config</code></p>
 <p>所以我们最好直接将整个 <code>.config</code>文件夹备份了，而不是单独备份 <code>.config/yazi</code></p>
 <p>建立链接后，我们以后就只需要修改 <code>~/dotfile/config/.config/yazi</code>里面的文件就行了，所做的修改会直接作用在 <code>~/.config/yazi</code>中</p>
 <p>不过若是增加或者删除了文件之后，要输入以下指令将原来没有或者刚刚增加的文件建立符号链接:</p>
@@ -551,10 +546,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        12.4k
+        12.5k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:43
+        00:44
       </div>
     
     
@@ -937,8 +932,8 @@
           description: "",
           stripContent: " 前言  本文为个人笔记本电脑的工作环境配置方案，仅供个人参考，未在其他设备进行过测试  直接上配置方案：  系统配置：Windows + WSL2下的kali / ubuntu 编辑器：nvim及其插件（linux）、 Vscode（windows） 终端以及Shell：Windows Terminal + zsh/nushell  由于本身刚需windows + linux双环境下的操作，所以放弃了安装双系统的方案，再加上由于个人电脑硬件不行 &amp;amp; 配置麻烦，也放弃了虚拟机的方案，最终",
           date: "Wed Oct 15 2025 19:56:26 GMT+0800",
-          updated: "Mon Oct 20 2025 00:55:26 GMT+0800",
-          cover: "/images/banner.webp",
+          updated: "Mon Oct 20 2025 22:45:11 GMT+0800",
+          cover: "https://golden-forest.top/625a4160a19dd391c14f1f92eb357493.jpg",
         };
       </script>
        
