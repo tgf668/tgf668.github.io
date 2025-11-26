@@ -43,7 +43,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功 ~ (*^▽^*)","fail":"复制失败 !!! (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://skipshot.cn';</script>
   
   <title>
-    [Algorithm] ZUC —— 流密钥算法的代码解释 |
+    [Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释 |
     
     寂静の - 永恒秋之森 -
   </title>
@@ -65,7 +65,7 @@
   
     <meta name="description" content="简单介绍一下用python写的ZUC（祖冲之算法），不管什么用语言写，其实现思路还是一样的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Algorithm] ZUC —— 流密钥算法的代码解释">
+<meta property="og:title" content="[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释">
 <meta property="og:url" content="https://skipshot.cn/2025/11/21/Algorithm-25-11-21/index.html">
 <meta property="og:site_name" content="寂静の - 永恒秋之森 -">
 <meta property="og:description" content="简单介绍一下用python写的ZUC（祖冲之算法），不管什么用语言写，其实现思路还是一样的">
@@ -77,7 +77,7 @@
 <meta property="og:image" content="https://golden-forest.top/449c2dc27494b41e49e2e9c24daf744a.png">
 <meta property="og:image" content="https://golden-forest.top/dec325ab30f47f3c261757530fb9bd3d.png">
 <meta property="article:published_time" content="2025-11-21T12:25:05.000Z">
-<meta property="article:modified_time" content="2025-11-26T06:55:58.692Z">
+<meta property="article:modified_time" content="2025-11-26T07:27:01.173Z">
 <meta property="article:author" content="SkipShot">
 <meta property="article:tag" content="StreamCipher">
 <meta name="twitter:card" content="summary">
@@ -219,16 +219,8 @@
 </div>
 <header id="header">
   
-    
-      
-        <picture>
-          
-        </picture>
-        
-          <img  fetchpriority="high" src="/images/banner.webp" alt="[Algorithm] ZUC —— 流密钥算法的代码解释">
-        
-      
-    
+    <picture></picture>
+    <img  fetchpriority="high" src="https://golden-forest.top/f47066e331aeeefd695c72ea24d732e1.jpg" alt="[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释">
   
   <div id="header-outer">
     <div id="header-title">
@@ -236,7 +228,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">[Algorithm] ZUC —— 流密钥算法的代码解释</h1>
+            <h1 data-aos="slide-up">[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释</h1>
           </a>
         
       
@@ -608,7 +600,7 @@
 </ul>
 <h2 id="加密解密"><a class="markdownIt-Anchor" href="#加密解密"></a> 加密解密</h2>
 <p>接着我们来看接下来的关键函数：<code>keystream=zuc.generate_keystream(key_words_needed)</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">def generate_keystream(self, L):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    5.6.3 工作步骤</span><br><span class="line">    生成L个32位密钥字</span><br><span class="line">    :param L: 需要生成的密钥字数量</span><br><span class="line">    :return: 密钥字列表</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    print(&quot;=== 工作步骤开始 ===&quot;)</span><br><span class="line">    print(f&quot;目标: 生成&#123;L&#125;个32位密钥字&quot;)</span><br><span class="line">  </span><br><span class="line">    keystream = []</span><br><span class="line">  </span><br><span class="line">    # (a) 执行一次工作阶段初始化</span><br><span class="line">    print(&quot;步骤(a): 工作阶段初始化&quot;)</span><br><span class="line">    X0, X1, X2, X3 = self.bit_reconstruction()</span><br><span class="line">    print(f&quot;  比特重组: X0=&#123;X0:08x&#125;, X1=&#123;X1:08x&#125;, X2=&#123;X2:08x&#125;, X3=&#123;X3:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">    self.nonlinear_function_F(X0, X1, X2)</span><br><span class="line">    print(f&quot;  非线性函数F: R1=&#123;self.R1:08x&#125;, R2=&#123;self.R2:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">    self.lfsr_work_mode()</span><br><span class="line">    print(&quot;  LFSR工作模式更新完成&quot;)</span><br><span class="line">  </span><br><span class="line">    # (b) 重复计算L次</span><br><span class="line">    print(f&quot;步骤(b): 生成&#123;L&#125;个密钥字&quot;)</span><br><span class="line">    for i in range(L):</span><br><span class="line">        print(f&quot;  第&#123;i+1&#125;个密钥字生成:&quot;)</span><br><span class="line">  </span><br><span class="line">        # 1) 比特重组</span><br><span class="line">        X0, X1, X2, X3 = self.bit_reconstruction()</span><br><span class="line">        print(f&quot;    比特重组: X0=&#123;X0:08x&#125;, X1=&#123;X1:08x&#125;, X2=&#123;X2:08x&#125;, X3=&#123;X3:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">        # 2) Z = F(X0,X1,X2) ⊕ X3</span><br><span class="line">        F_output = self.nonlinear_function_F(X0, X1, X2)</span><br><span class="line">        Z = F_output ^ X3</span><br><span class="line">        print(f&quot;    密钥字计算: F=&#123;F_output:08x&#125;, Z=F⊕X3=&#123;Z:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">        # 3) 输出密钥字Z</span><br><span class="line">        keystream.append(Z)</span><br><span class="line">  </span><br><span class="line">        # 4) LFSR工作模式</span><br><span class="line">        self.lfsr_work_mode()</span><br><span class="line">        print(f&quot;    LFSR工作模式更新完成&quot;)</span><br><span class="line">  </span><br><span class="line">    print(&quot;=== 工作步骤完成 ===\n&quot;)</span><br><span class="line">    return keystream</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">def generate_keystream(self, L):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    5.6.3 工作步骤</span><br><span class="line">    生成L个32位密钥字</span><br><span class="line">    :param L: 需要生成的密钥字数量</span><br><span class="line">    :return: 密钥字列表</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    print(&quot;=== 工作步骤开始 ===&quot;)</span><br><span class="line">    print(f&quot;目标: 生成&#123;L&#125;个32位密钥字&quot;)</span><br><span class="line">  </span><br><span class="line">    keystream = []</span><br><span class="line">  </span><br><span class="line">    # (a) 执行一次工作阶段初始化</span><br><span class="line">    print(&quot;步骤(a): 工作阶段初始化&quot;)</span><br><span class="line">    X0, X1, X2, X3 = self.bit_reconstruction()</span><br><span class="line">    print(f&quot;  比特重组: X0=&#123;X0:08x&#125;, X1=&#123;X1:08x&#125;, X2=&#123;X2:08x&#125;, X3=&#123;X3:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">    self.nonlinear_function_F(X0, X1, X2)</span><br><span class="line">    print(f&quot;  非线性函数F: R1=&#123;self.R1:08x&#125;, R2=&#123;self.R2:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">    self.lfsr_work_mode()</span><br><span class="line">    print(&quot;  LFSR工作模式更新完成&quot;)  </span><br><span class="line">    # (b) 重复计算L次</span><br><span class="line">    print(f&quot;步骤(b): 生成&#123;L&#125;个密钥字&quot;)</span><br><span class="line">    for i in range(L):</span><br><span class="line">        print(f&quot;  第&#123;i+1&#125;个密钥字生成:&quot;)</span><br><span class="line">  </span><br><span class="line">        # 1) 比特重组</span><br><span class="line">        X0, X1, X2, X3 = self.bit_reconstruction()</span><br><span class="line">        print(f&quot;    比特重组: X0=&#123;X0:08x&#125;, X1=&#123;X1:08x&#125;, X2=&#123;X2:08x&#125;, X3=&#123;X3:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">        # 2) Z = F(X0,X1,X2) ⊕ X3</span><br><span class="line">        F_output = self.nonlinear_function_F(X0, X1, X2)</span><br><span class="line">        Z = F_output ^ X3</span><br><span class="line">        print(f&quot;    密钥字计算: F=&#123;F_output:08x&#125;, Z=F⊕X3=&#123;Z:08x&#125;&quot;)</span><br><span class="line">  </span><br><span class="line">        # 3) 输出密钥字Z</span><br><span class="line">        keystream.append(Z)</span><br><span class="line">  </span><br><span class="line">        # 4) LFSR工作模式</span><br><span class="line">        self.lfsr_work_mode()</span><br><span class="line">        print(f&quot;    LFSR工作模式更新完成&quot;)</span><br><span class="line">  </span><br><span class="line">    print(&quot;=== 工作步骤完成 ===\n&quot;)</span><br><span class="line">    return keystream</span><br></pre></td></tr></table></figure>
 <p>这里有一个疑问点：为什么还要进行一次<strong>工作阶段初始化？</strong></p>
 <p>其实很简单：我们前面进行 <code>比特重组</code>+<code>非线性函数F</code>生成的值，最后都加入到 <code>LFSR</code>中了，也就是说，这些 <code>密钥流字</code>都是“非线性改造过的”，但是，在工作模式下的 <code>LFSR</code>，我们要的是“纯线性”的 <code>密钥流字</code>，<strong>所以，我们需要进行一次工作初始化，即把第一次生成的 <code>密钥流字</code>给“丢弃了”</strong></p>
 <p>当然另一种方便记忆的解释是：<strong>好比汽车发动，你得先开启引擎让他开一会看看正不正常运行</strong></p>
@@ -1097,14 +1089,14 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "SkipShot",
-          title: "[Algorithm] ZUC —— 流密钥算法的代码解释",
+          title: "[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释",
           url: "https://skipshot.cn/2025/11/21/Algorithm-25-11-21/",
           excerpt: "简单介绍一下用python写的ZUC（祖冲之算法），不管什么用语言写，其实现思路还是一样的",
           description: "",
           stripContent: " ZUC算法分析  本文写于作者进行密码学课程实验过程中，会以“初学者”的视角去解读。不涉及CTF中的逆向、密码知识，只为做深入理解并为后面复习所用。文章代码源于AI生成，作者专门调过提示词，按照GB/T33133.1—2016标准设计，可能与其他标准或实现顺序有区别，如有问题，请联系作者：（后面开个仓库）   前言 首先，想了解ZUC算法是什么：祖冲之算法，也称为ZUC算法，是一种由中国学者自主设计的同步序列密码算法（流密码），主要用于加密和数据完整性校验。它是中国第一个成为国际密码标准的算法",
           date: "Fri Nov 21 2025 20:25:05 GMT+0800",
-          updated: "Wed Nov 26 2025 14:55:58 GMT+0800",
-          cover: "/images/banner.webp",
+          updated: "Wed Nov 26 2025 15:27:01 GMT+0800",
+          cover: "https://golden-forest.top/f47066e331aeeefd695c72ea24d732e1.jpg",
         };
       </script>
        

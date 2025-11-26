@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2025-11-26T06:55:58.692Z</updated>
+  <updated>2025-11-26T07:27:01.173Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[Algorithm] ZUC —— 流密钥算法的代码解释</title>
+    <title>[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释</title>
     <link href="https://skipshot.cn/2025/11/21/Algorithm-25-11-21/"/>
     <id>https://skipshot.cn/2025/11/21/Algorithm-25-11-21/</id>
     <published>2025-11-21T12:25:05.000Z</published>
-    <updated>2025-11-26T06:55:58.692Z</updated>
+    <updated>2025-11-26T07:27:01.173Z</updated>
     
     
     <summary type="html">简单介绍一下用python写的ZUC（祖冲之算法），不管什么用语言写，其实现思路还是一样的</summary>
