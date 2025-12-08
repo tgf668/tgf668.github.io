@@ -43,7 +43,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功 ~ (*^▽^*)","fail":"复制失败 !!! (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://skipshot.cn';</script>
   
   <title>
-    [Learn] Ubuntu |
+    [Learn] FuzzingBook - Part I: Whetting Your Appetite |
     
     寂静の - 永恒秋之森 -
   </title>
@@ -63,18 +63,20 @@
 
   
   
-    <meta name="description" content="Hello Linux">
+    <meta name="description" content="What is FuzzingBook?">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Learn] Ubuntu">
-<meta property="og:url" content="https://skipshot.cn/2025/08/15/Learn-25-8-15/index.html">
+<meta property="og:title" content="[Learn] FuzzingBook - Part I: Whetting Your Appetite">
+<meta property="og:url" content="https://skipshot.cn/2025/12/08/Learn-25-12-8/index.html">
 <meta property="og:site_name" content="寂静の - 永恒秋之森 -">
-<meta property="og:description" content="Hello Linux">
+<meta property="og:description" content="What is FuzzingBook?">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-15T15:09:10.000Z">
-<meta property="article:modified_time" content="2025-11-10T16:35:56.310Z">
+<meta property="og:image" content="https://golden-forest.top/a0d5946d12effca7e146e32c242c3067.png">
+<meta property="article:published_time" content="2025-12-08T01:02:25.000Z">
+<meta property="article:modified_time" content="2025-12-08T11:49:11.502Z">
 <meta property="article:author" content="SkipShot">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="FuzzingBook">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://golden-forest.top/a0d5946d12effca7e146e32c242c3067.png">
   
   
     <link rel="alternate" href="/atom.xml" title="寂静の - 永恒秋之森 -" type="application/atom+xml">
@@ -213,7 +215,7 @@
 <header id="header">
   
     <picture></picture>
-    <img  fetchpriority="high" src="https://golden-forest.top/2025/09/91e1437cc2ca20a81be3c969171940e1.jpg" alt="[Learn] Ubuntu">
+    <img  fetchpriority="high" src="https://golden-forest.top/2711701d4bbe93a94aa5aa66fc9d46c9.jpg" alt="[Learn] FuzzingBook - Part I: Whetting Your Appetite">
   
   <div id="header-outer">
     <div id="header-title">
@@ -221,7 +223,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">[Learn] Ubuntu</h1>
+            <h1 data-aos="slide-up">[Learn] FuzzingBook - Part I: Whetting Your Appetite</h1>
           </a>
         
       
@@ -248,7 +250,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hello-linux"><span class="toc-number">1.</span> <span class="toc-text"> Hello Linux!!!</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#whetting-your-appetite"><span class="toc-number"></span> <span class="toc-text"> Whetting Your Appetite</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tours-through-the-book"><span class="toc-number">1.</span> <span class="toc-text"> Tours through the Book</span></a></li></ol>
       
   </div>
 </div>
@@ -336,13 +338,13 @@
   
 </aside>
 
-          <section id="main"><article id="post-Learn-25-8-15" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main"><article id="post-Learn-25-12-8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
-    <time datetime="2025-08-15T15:09:10.000Z" itemprop="datePublished">2025-08-15</time>
-    <time style="display: none;" id="post-update-time">2025-11-11</time>
+    <time datetime="2025-12-08T01:02:25.000Z" itemprop="datePublished">2025-12-08</time>
+    <time style="display: none;" id="post-update-time">2025-12-08</time>
   </span>
 </div>
 
@@ -359,11 +361,43 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <h2 id="hello-linux"><a class="markdownIt-Anchor" href="#hello-linux"></a> Hello Linux!!!</h2>
+        <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
 <blockquote>
-<p>Linux发行版：Ubuntu24.04 LTS</p>
+<p>本文参考以下网站中的内容进行有关fuzzing的知识，本文做后续程序设计参考及复习所用：</p>
+<p><a target="_blank" rel="noopener" href="https://www.fuzzingbook.org/">https://www.fuzzingbook.org/</a></p>
 </blockquote>
-<p>此文用于学习Linux时的收获及感悟，不定时更新</p>
+<p>由于原文拥有着超长的文本内容加上超多的代码，想要用一篇文章写完基本上是不可能的（一时半会也看不完），所以我将以书中的章节为分割，每篇文章记录学习记录。</p>
+<p>每篇文章按照&quot;大标题 + 小标题&quot;的形式介绍，文本内容按照以下规范：</p>
+<ul>
+<li>正常文本 为作者笔记，包含内容解释或者某些启发等等，按照先原文、后笔记的对照方式</li>
+<li><em>斜体文本</em> 皆为网站中的原文及机翻，便于对照</li>
+<li><strong>粗体文本</strong> 为重要知识点或者有启发性的内容，便于后期复习所用</li>
+<li><code>代码文本</code> 为函数名、变量名、关键字等，也有可能用于专业名词</li>
+<li><s>删除文本</s> 为作者碎碎念</li>
+<li>保留原文中的所有内容（包括超链接）防止出现上下文不理解（尊重原文）</li>
+</ul>
+<h1 id="whetting-your-appetite"><a class="markdownIt-Anchor" href="#whetting-your-appetite"></a> Whetting Your Appetite</h1>
+<p><em>In this part, we introduce the topics of the book.</em></p>
+<p><em>在这一部分，我们介绍了本书的主题。</em></p>
+<ul>
+<li><em><a target="_blank" rel="noopener" href="https://www.fuzzingbook.org/html/Tours.html">Tours through the book</a> presents a number of tours through the book, introducing the different techniques discussed – from the simplest forms of random input to high-end symbolic reasoning.</em>
+<ul>
+<li><em>本书的导览展示了多种导览方式，介绍了书中讨论的不同技术——从最简单的随机输入到高级的符号推理。</em></li>
+</ul>
+</li>
+<li><em><a target="_blank" rel="noopener" href="https://www.fuzzingbook.org/html/Intro_Testing.html">Introduction to Software Testing</a> introduces the basics of software testing, and acquaints you with Python and interactive notebooks.</em>
+<ul>
+<li><em>软件测试简介介绍了软件测试的基础知识，并使您熟悉 Python 和交互式笔记本。</em></li>
+</ul>
+</li>
+</ul>
+<p>（占个位）</p>
+<h2 id="tours-through-the-book"><a class="markdownIt-Anchor" href="#tours-through-the-book"></a> Tours through the Book</h2>
+<p><em>This book is massive. With more than 20,000 lines of code and 150,000 words of text, a printed version would cover more than 1,200 pages of text. Obviously, we do not assume that everybody wants to read everything.</em></p>
+<p><em>这本书非常庞大。包含超过 20,000 行代码和 150,000 字的文本，印刷版本将超过 1,200 页。显然，我们并不假设每个人都想阅读所有内容。</em></p>
+<p><em>While the chapters of this book can be read one after the other, there are many possible paths through the book. In this graph, an arrow <strong>A</strong>→<strong>B</strong> means that chapter <strong>A</strong> is a prerequisite for chapter <strong>B</strong>. You can pick arbitrary paths in this graph to get to the topics that interest you most:</em></p>
+<p><em>虽然本书的章节可以依次阅读，但书中有很多可能的阅读路径。在这个图中，箭头 A→B 表示章节 A 是章节 B 的先决条件。你可以在这个图中选择任意路径，以到达你最感兴趣的专题：</em></p>
+<p><img src="https://golden-forest.top/a0d5946d12effca7e146e32c242c3067.png" alt="" /></p>
 
       
     </div>
@@ -377,7 +411,7 @@
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/FuzzingBook/" rel="tag">FuzzingBook</a></li></ul>
 
 
     </footer>
@@ -385,31 +419,17 @@
   
   <nav id="article-nav" data-aos="fade-up">
     
-      
-      <div class="article-nav-link-wrap article-nav-link-left">
-        
-          <img data-src="https://golden-forest.top/2025/09/8e13779b06d7eba884bd0d19809b66ea.jpg" data-sizes="auto" alt="[Learn] 正则表达式学习笔记" class="lazyload">
-        
-        <a href="/2025/08/16/Learn-25-8-16/"></a>
-        <div class="article-nav-caption">前一篇</div>
-        <h3 class="article-nav-title">
-          
-            [Learn] 正则表达式学习笔记
-          
-        </h3>
-      </div>
-    
     
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
-        <img data-src="https://golden-forest.top/2025/09/085e38797a27cb1510dc75e60e76b0d5.png" data-sizes="auto" alt="[Blog] 如何自定义你的博客" class="lazyload">
+        <img data-src="https://golden-forest.top/f47066e331aeeefd695c72ea24d732e1.jpg" data-sizes="auto" alt="[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释" class="lazyload">
       
-      <a href="/2025/07/04/Blog-Migration/"></a>
+      <a href="/2025/11/21/Algorithm-25-11-21/"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
         
-          [Blog] 如何自定义你的博客
+          [Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释
         
       </h3>
     </div>
@@ -515,7 +535,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hello-linux"><span class="toc-number">1.</span> <span class="toc-text"> Hello Linux!!!</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#whetting-your-appetite"><span class="toc-number"></span> <span class="toc-text"> Whetting Your Appetite</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tours-through-the-book"><span class="toc-number">1.</span> <span class="toc-text"> Tours through the Book</span></a></li></ol>
       
   </div>
 </div>
@@ -859,14 +879,14 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "SkipShot",
-          title: "[Learn] Ubuntu",
-          url: "https://skipshot.cn/2025/08/15/Learn-25-8-15/",
-          excerpt: "Hello Linux",
+          title: "[Learn] FuzzingBook - Part I: Whetting Your Appetite",
+          url: "https://skipshot.cn/2025/12/08/Learn-25-12-8/",
+          excerpt: "What is FuzzingBook?",
           description: "",
-          stripContent: " Hello Linux!!!  Linux发行版：Ubuntu24.04 LTS  此文用于学习Linux时的收获及感悟，不定时更新 ",
-          date: "Fri Aug 15 2025 23:09:10 GMT+0800",
-          updated: "Tue Nov 11 2025 00:35:56 GMT+0800",
-          cover: "https://golden-forest.top/2025/09/91e1437cc2ca20a81be3c969171940e1.jpg",
+          stripContent: " 前言  本文参考以下网站中的内容进行有关fuzzing的知识，本文做后续程序设计参考及复习所用： https://www.fuzzingbook.org/  由于原文拥有着超长的文本内容加上超多的代码，想要用一篇文章写完基本上是不可能的（一时半会也看不完），所以我将以书中的章节为分割，每篇文章记录学习记录。 每篇文章按照&amp;quot;大标题 + 小标题&amp;quot;的形式介绍，文本内容按照以下规范：  正常文本 为作者笔记，包含内容解释或者某些启发等等，按照先原文、后笔记的对照方式 斜体文本 皆为",
+          date: "Mon Dec 08 2025 09:02:25 GMT+0800",
+          updated: "Mon Dec 08 2025 19:49:11 GMT+0800",
+          cover: "https://golden-forest.top/2711701d4bbe93a94aa5aa66fc9d46c9.jpg",
         };
       </script>
        

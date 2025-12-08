@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2025-11-26T07:27:01.173Z</updated>
+  <updated>2025-12-08T11:49:11.502Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Learn] FuzzingBook - Part I: Whetting Your Appetite</title>
+    <link href="https://skipshot.cn/2025/12/08/Learn-25-12-8/"/>
+    <id>https://skipshot.cn/2025/12/08/Learn-25-12-8/</id>
+    <published>2025-12-08T01:02:25.000Z</published>
+    <updated>2025-12-08T11:49:11.502Z</updated>
+    
+    
+    <summary type="html">What is FuzzingBook?</summary>
+    
+    
+    
+    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
+    
+    
+    <category term="FuzzingBook" scheme="https://skipshot.cn/tags/FuzzingBook/"/>
+    
+  </entry>
   
   <entry>
     <title>[Algorithm] ZUC —— “祖冲之”流密钥算法的代码解释</title>
@@ -135,7 +154,7 @@
     <link href="https://skipshot.cn/2025/09/07/Learn-25-9-7/"/>
     <id>https://skipshot.cn/2025/09/07/Learn-25-9-7/</id>
     <published>2025-09-07T14:22:32.000Z</published>
-    <updated>2025-11-26T03:23:01.949Z</updated>
+    <updated>2025-12-08T11:09:29.829Z</updated>
     
     
     <summary type="html">周更！</summary>
@@ -325,7 +344,7 @@
     <link href="https://skipshot.cn/2025/03/31/Blog-log/"/>
     <id>https://skipshot.cn/2025/03/31/Blog-log/</id>
     <published>2025-03-31T11:29:12.000Z</published>
-    <updated>2025-11-10T16:37:10.968Z</updated>
+    <updated>2025-12-08T11:14:13.398Z</updated>
     
     
     <summary type="html">记录博客的大大小小更新内容~</summary>
@@ -344,7 +363,7 @@
     <link href="https://skipshot.cn/2025/03/31/Blog-project/"/>
     <id>https://skipshot.cn/2025/03/31/Blog-project/</id>
     <published>2025-03-31T10:32:45.000Z</published>
-    <updated>2025-10-20T14:47:45.741Z</updated>
+    <updated>2025-12-08T01:00:28.719Z</updated>
     
     
     <summary type="html">大饼...也许呢(笑)</summary>
