@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2025-12-08T11:49:11.502Z</updated>
+  <updated>2026-04-14T11:18:59.553Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Writing] 也无风雨也无晴</title>
+    <link href="https://skipshot.cn/2025/12/23/Writing-25-12-23/"/>
+    <id>https://skipshot.cn/2025/12/23/Writing-25-12-23/</id>
+    <published>2025-12-23T15:57:44.000Z</published>
+    <updated>2026-04-14T11:18:59.553Z</updated>
+    
+    
+    <summary type="html">莫听穿林打叶声，何妨吟啸且徐行</summary>
+    
+    
+    
+    <category term="Writing" scheme="https://skipshot.cn/categories/Writing/"/>
+    
+    
+    <category term="Life" scheme="https://skipshot.cn/tags/Life/"/>
+    
+  </entry>
   
   <entry>
     <title>[Learn] FuzzingBook - Part I: Whetting Your Appetite</title>
@@ -51,25 +70,6 @@
     
     
     <category term="StreamCipher" scheme="https://skipshot.cn/tags/StreamCipher/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Writing] 也无风雨也无晴</title>
-    <link href="https://skipshot.cn/2025/10/23/Writing-25-10-23/"/>
-    <id>https://skipshot.cn/2025/10/23/Writing-25-10-23/</id>
-    <published>2025-10-23T15:57:44.000Z</published>
-    <updated>2025-10-26T15:31:17.523Z</updated>
-    
-    
-    <summary type="html">莫听穿林打叶声，何妨吟啸且徐行</summary>
-    
-    
-    
-    <category term="Writing" scheme="https://skipshot.cn/categories/Writing/"/>
-    
-    
-    <category term="Life" scheme="https://skipshot.cn/tags/Life/"/>
     
   </entry>
   
@@ -112,25 +112,6 @@
   </entry>
   
   <entry>
-    <title>[Learn] 十道漏洞复现</title>
-    <link href="https://skipshot.cn/2025/10/02/Learn-25-10-2/"/>
-    <id>https://skipshot.cn/2025/10/02/Learn-25-10-2/</id>
-    <published>2025-10-02T08:00:18.000Z</published>
-    <updated>2025-10-19T16:38:52.000Z</updated>
-    
-    
-    <summary type="html">EX part！</summary>
-    
-    
-    
-    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
-    
-    
-    <category term="Exercise" scheme="https://skipshot.cn/tags/Exercise/"/>
-    
-  </entry>
-  
-  <entry>
     <title>[Learn] AFL++学习笔记</title>
     <link href="https://skipshot.cn/2025/09/23/Learn-25-9-23/"/>
     <id>https://skipshot.cn/2025/09/23/Learn-25-9-23/</id>
@@ -154,7 +135,7 @@
     <link href="https://skipshot.cn/2025/09/07/Learn-25-9-7/"/>
     <id>https://skipshot.cn/2025/09/07/Learn-25-9-7/</id>
     <published>2025-09-07T14:22:32.000Z</published>
-    <updated>2025-12-17T10:58:50.982Z</updated>
+    <updated>2026-04-14T11:21:48.561Z</updated>
     
     
     <summary type="html">周更！</summary>
@@ -196,25 +177,6 @@
     
     
     <summary type="html">难学但好用</summary>
-    
-    
-    
-    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
-    
-    
-    <category term="Linux" scheme="https://skipshot.cn/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Learn] Ubuntu</title>
-    <link href="https://skipshot.cn/2025/08/15/Learn-25-8-15/"/>
-    <id>https://skipshot.cn/2025/08/15/Learn-25-8-15/</id>
-    <published>2025-08-15T15:09:10.000Z</published>
-    <updated>2025-11-10T16:35:56.310Z</updated>
-    
-    
-    <summary type="html">Hello Linux</summary>
     
     
     
