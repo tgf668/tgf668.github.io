@@ -6,7 +6,7 @@
   <link href="https://skipshot.cn/atom.xml" rel="self"/>
   
   <link href="https://skipshot.cn/"/>
-  <updated>2026-04-14T11:18:59.553Z</updated>
+  <updated>2026-04-22T11:54:35.592Z</updated>
   <id>https://skipshot.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Learn] 春蚕夏栀</title>
+    <link href="https://skipshot.cn/2026/04/22/Learn-26-4-22/"/>
+    <id>https://skipshot.cn/2026/04/22/Learn-26-4-22/</id>
+    <published>2026-04-22T11:26:13.000Z</published>
+    <updated>2026-04-22T11:54:35.592Z</updated>
+    
+    
+    <summary type="html">拾遗...</summary>
+    
+    
+    
+    <category term="Learn" scheme="https://skipshot.cn/categories/Learn/"/>
+    
+    
+    <category term="Log" scheme="https://skipshot.cn/tags/Log/"/>
+    
+  </entry>
   
   <entry>
     <title>[Writing] 也无风雨也无晴</title>
@@ -135,7 +154,7 @@
     <link href="https://skipshot.cn/2025/09/07/Learn-25-9-7/"/>
     <id>https://skipshot.cn/2025/09/07/Learn-25-9-7/</id>
     <published>2025-09-07T14:22:32.000Z</published>
-    <updated>2026-04-14T11:21:48.561Z</updated>
+    <updated>2026-04-22T11:46:38.755Z</updated>
     
     
     <summary type="html">周更！</summary>
@@ -306,7 +325,7 @@
     <link href="https://skipshot.cn/2025/03/31/Blog-log/"/>
     <id>https://skipshot.cn/2025/03/31/Blog-log/</id>
     <published>2025-03-31T11:29:12.000Z</published>
-    <updated>2026-04-15T07:07:40.564Z</updated>
+    <updated>2026-04-22T11:46:57.943Z</updated>
     
     
     <summary type="html">记录博客的大大小小更新内容~</summary>
