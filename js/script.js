@@ -72,9 +72,11 @@ window.throttle = (func, limit) => {
   window._$$ = (selector) => document.querySelectorAll(selector);
 
   // dark_mode
-  const themeButton = document.createElement("a");
+  const themeButton = document.createElement("button");
+  themeButton.type = "button";
+  themeButton.title = "切换明暗模式";
   themeButton.className = "nav-icon dark-mode-btn";
-  _$("#sub-nav").append(themeButton);
+  _$("#sub-nav").insertBefore(themeButton, _$("#nav-leaves-btn"));
 
   const osMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
   function setTheme(config) {

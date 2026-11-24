@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Only apply effect to home page (index)
-    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
-        return;
-    }
-
-    // Create the toggle button UI matching Reimu's circular sidebar buttons
-    const toggleBtn = document.createElement('div');
-    toggleBtn.id = 'leaf-toggle-container';
-    toggleBtn.title = '切换落叶效果';
-    toggleBtn.innerHTML = '🍂';
-    document.body.appendChild(toggleBtn);
+    const toggleBtn = document.getElementById('nav-leaves-btn');
+    if (!toggleBtn) return;
 
     // Get the wrap container where we will insert leaves (behind content, in front of header)
     const wrapContainer = document.getElementById('wrap') || document.body;
@@ -65,16 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const toggleLeaves = () => {
-        if (isLeavesEnabled) {
-            toggleBtn.style.opacity = '1';
-            toggleBtn.style.filter = 'grayscale(0%)';
+        toggleBtn.hidden = !document.querySelector('.forest-home-title');
+        toggleBtn.setAttribute('aria-pressed', String(isLeavesEnabled));
+        if (isLeavesEnabled && !toggleBtn.hidden) {
             if (!leafInterval) {
                 // Generate a leaf every 150ms for a dense forest effect
                 leafInterval = setInterval(createLeaf, 150);
             }
         } else {
-            toggleBtn.style.opacity = '0.7';
-            toggleBtn.style.filter = 'grayscale(100%)';
             if (leafInterval) {
                 clearInterval(leafInterval);
                 leafInterval = null;
@@ -96,6 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleLeaves();
     });
 
-    // Initialize the effect based on user's saved preference
+    window.addEventListener('pjax:complete', toggleLeaves);
     toggleLeaves();
 });
