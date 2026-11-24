@@ -115,14 +115,6 @@
   font-family: "iconfont";
   content: "\e631";
 }
-.ais-pagination--item__previous a:before {
-  font-family: "iconfont";
-  content: "\e601";
-}
-.ais-pagination--item__next a:before {
-  font-family: "iconfont";
-  content: "\e630";
-}
 .icon-github:before {
   content: "\e619";
 }

@@ -353,14 +353,6 @@ body [data-aos='zoom-in'] {
   font-family: "iconfont";
   content: "\e631";
 }
-.ais-pagination--item__previous a:before {
-  font-family: "iconfont";
-  content: "\e601";
-}
-.ais-pagination--item__next a:before {
-  font-family: "iconfont";
-  content: "\e630";
-}
 .icon-github:before {
   content: "\e619";
 }
@@ -1696,6 +1688,12 @@ a {
 .gitalk-comment {
   color: var(--color-default);
 }
+#comments .gt-comment-content:hover {
+  box-shadow: 0 2px 8px rgba(40,32,24,0.1);
+}
+[data-theme="dark"] #comments .gt-comment-content:hover {
+  box-shadow: 0 1px 6px rgba(210,219,236,0.12);
+}
 .wl-emoji-popup {
   max-width: calc(100vw - 90px) !important;
 }
@@ -2617,6 +2615,8 @@ pre .javascript .function {
   padding: 0;
 }
 .popup-btn-close {
+  background: transparent;
+  border: 0;
   color: var(--red-1);
   font: 20px bold;
   cursor: var(--cursor-pointer) !important;
@@ -2656,21 +2656,12 @@ pre .javascript .function {
 .reimu-search-input input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
-.reimu-powered {
-  float: right;
-  cursor: var(--cursor-default) !important;
-}
-.reimu-powered img {
-  display: inline-block;
-  height: 18px;
-  vertical-align: middle;
-}
 .reimu-results {
   position: relative;
   overflow: auto;
   padding: 15px 30px;
   box-sizing: border-box;
-  max-height: calc(100% - 50px);
+  max-height: calc(80vh - 50px);
 }
 @media screen and (min-width: 768px) {
   .reimu-results {
@@ -2726,33 +2717,30 @@ pre .javascript .function {
   color: var(--grey-9);
   overflow: hidden;
 }
-.reimu-pagination a {
+.reimu-pagination button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   padding: 10px 15px;
   color: var(--grey-9);
   text-decoration: none;
   transition: 0.2s;
 }
-.reimu-pagination a:hover {
+.reimu-pagination button:hover {
   background: var(--red-2);
   box-shadow: 0 0 10px var(--color-red-6-shadow);
   color: #fff;
-}
-.reimu-pagination .pagination-item {
-  display: inline-block;
 }
 .reimu-pagination .page-number {
   display: inline-block;
   border-radius: 30px;
   margin: 5px;
 }
-.reimu-pagination .current .page-number {
+.reimu-pagination .page-number[aria-current="page"] {
   color: #fff;
   background: var(--red-1);
   font-weight: bold;
   box-shadow: 0 0 10px var(--color-red-6-shadow);
-}
-.reimu-pagination .disabled-item {
-  display: none;
 }
 .reimu-bg {
   position: absolute;
@@ -2760,11 +2748,6 @@ pre .javascript .function {
   bottom: 0;
   z-index: -1;
   opacity: 0.5;
-}
-#reimu-hits-empty {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 #sidebar {
   display: none;

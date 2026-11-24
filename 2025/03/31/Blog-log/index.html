@@ -71,7 +71,7 @@
 <meta property="og:description" content="记录博客的大大小小更新内容~">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-31T11:29:12.000Z">
-<meta property="article:modified_time" content="2026-04-22T11:46:57.943Z">
+<meta property="article:modified_time" content="2026-11-24T09:36:21.000Z">
 <meta property="article:author" content="SkipShot">
 <meta property="article:tag" content="Log">
 <meta name="twitter:card" content="summary">
@@ -236,20 +236,20 @@
   
   <div id="header-outer">
     
-    <div id="header-title">
+    <div id="header-title" class="forest-title">
       
         
         
           
             <a href="/" id="logo">
-              <h1 data-aos="slide-up">[Blog] 更新日志</h1>
+              <h1>[Blog] 更新日志</h1>
             </a>
           
         
       
       
         
-        <h2 id="subtitle-wrap" data-aos="slide-down">
+        <h2 id="subtitle-wrap">
           
         </h2>
       
@@ -364,7 +364,7 @@
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-03-31T11:29:12.000Z" itemprop="datePublished">2025-03-31</time>
-    <time style="display: none;" id="post-update-time">2026-04-22</time>
+    <time style="display: none;" id="post-update-time">2026-11-24</time>
   </span>
 </div>
 
@@ -695,20 +695,23 @@
     </div>
     
       <div class="site-search">
-        <div class="reimu-popup popup">
-          <div class="reimu-search">
-            <div class="reimu-search-input-icon"></div>
-            <div class="reimu-search-input" id="reimu-search-input"></div>
-            <div class="popup-btn-close"></div>
-          </div>
-          <div class="reimu-results">
-            <div id="reimu-stats"></div>
-            <div id="reimu-hits"></div>
-            <div id="reimu-pagination" class="reimu-pagination"></div>
-          </div>
-          <img class="reimu-bg" src="/images/reimu.png"/>
-        </div>
+  <div class="reimu-popup popup" role="dialog" aria-label="站内搜索" data-index="/search.json">
+    <div class="reimu-search">
+      <div class="reimu-search-input-icon" aria-hidden="true"></div>
+      <div class="reimu-search-input">
+        <input type="search" id="search-text" aria-label="搜索标题或正文" placeholder="搜索标题或正文…" autocomplete="off">
       </div>
+      <button type="button" class="popup-btn-close" aria-label="关闭搜索"></button>
+    </div>
+    <div class="reimu-results">
+      <div id="reimu-stats" role="status"></div>
+      <div id="reimu-hits"></div>
+      <nav id="reimu-pagination" class="reimu-pagination" aria-label="搜索结果分页"></nav>
+    </div>
+    <img class="reimu-bg" src="/images/reimu.png" alt="">
+  </div>
+</div>
+
     
     
     
@@ -751,34 +754,8 @@
 
 
 
-
-
-  <script>
-    var ALGOLIA_CONFIG = {
-      logo: "/images/algolia_logo.svg",
-      algolia: {
-        applicationID: "JUZ7GOX38H",
-        apiKey: "8be753c0c3d70de624fc33b8c95d4610",
-        indexName: "AfterRain",
-        hits: {
-          "per_page": parseInt("10")
-        },
-        labels: {
-          "input_placeholder": "搜索.....",
-          "hits_empty": "未发现与 「${query}」相关内容",
-          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
-        }
-      }
-    };
-  </script>
   
-<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js" integrity="sha384-xvLS0jfKuoREs7pqkRI&#x2F;OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk" crossorigin="anonymous" defer></script>
-
-  
-<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js" integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn&#x2F;Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J" crossorigin="anonymous" defer></script>
-
-  
-<script src="/js/algolia_search.js" defer></script>
+<script src="/js/generator_search.js" defer></script>
 
 
 
@@ -960,7 +937,7 @@
           description: "",
           stripContent: " 什么时候才能自己搓一个模板呢?♪(´▽｀)  V0.0.6  2026/4/15  复活！ 添加了一个落叶效果，可在左下角开关 为卡片/部件添加了毛玻璃质感，可以隐约看到背后的落叶 优化了文章字体，提高了正文的亮度，增强对比度 给主标题文字高亮（hyw） 修改了字体的采用逻辑，现在优先加载谷歌字体   V0.0.5  2025/11/11  水一下证明这博客还活着(虽然文章是有在更新的。。。)   2025/9/7  修复了字体显示错误问题（不过突然发现字体能自兼容了？！) 音乐盒二次添加 (",
           date: "Mon Mar 31 2025 19:29:12 GMT+0800",
-          updated: "Wed Apr 22 2026 19:46:57 GMT+0800",
+          updated: "Tue Nov 24 2026 17:36:21 GMT+0800",
           cover: "https://golden-forest.top/5074eda2c8d15a5bb8c6b7844572baa4.png",
         };
       </script>

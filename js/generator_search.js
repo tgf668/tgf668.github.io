@@ -1,120 +1,103 @@
 (() => {
-  const searchInput = _$("#reimu-search-input");
-  const searchResult = _$("#reimu-hits");
-  const pagination = _$("#reimu-pagination");
-  const itemsPerPage = 10;
-  let currentPage = 1;
+  const popup = document.querySelector(".site-search .popup");
+  const trigger = document.getElementById("nav-search-btn");
+  const mask = document.getElementById("mask");
+  const input = popup.querySelector("#search-text");
+  const results = popup.querySelector("#reimu-hits");
+  const status = popup.querySelector("#reimu-stats");
+  const pagination = popup.querySelector("#reimu-pagination");
+  const pageSize = 10;
+  let entries;
+  let request;
+  let matches = [];
 
-  searchInput.insertAdjacentHTML(
-    "beforeend",
-    '<form id="search-form"><input type="text" id="search-text"></form>'
-  );
-  fetch("/search.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      _$("#search-form")
-        .off("submit")
-        .on("submit", (event) => {
-          event.preventDefault();
-          const inputText = _$("#search-text").value;
-          searchResult.innerHTML = "";
-          pagination.innerHTML = "";
-          if (inputText) {
-            const hits = data.filter((post) => {
-              return (
-                (post.title &&
-                  post.title.toLowerCase().includes(inputText.toLowerCase())) ||
-                (post.content &&
-                  post.content.toLowerCase().includes(inputText.toLowerCase()))
-              );
-            });
-
-            const totalPages = Math.ceil(hits.length / itemsPerPage);
-            pagination.insertAdjacentHTML(
-              "beforeend",
-              '<ul class="ais-Pagination-list pagination">'
-            );
-            for (let i = 1; i <= totalPages; i++) {
-              const pageItem = document.createElement("li");
-              pageItem.className =
-                "ais-Pagination-item pagination-item ais-Pagination-item--page";
-              pageItem.innerHTML = `<a class="ais-Pagination-link page-number" aria-label="Page ${i}" href="#">${i}</a>`;
-              if (i === currentPage) {
-                pageItem.classList.add(
-                  "ais-Pagination-item--selected",
-                  "current"
-                );
-              }
-              pagination.querySelector("ul").appendChild(pageItem);
-            }
-
-            _$$(".page-number").forEach((element) => {
-              element.off("click").on("click", (event) => {
-                event.preventDefault();
-                currentPage = element.innerText;
-                _$$(".ais-Pagination-item").forEach((element) => {
-                  element.classList.remove(
-                    "ais-Pagination-item--selected",
-                    "current"
-                  );
-                });
-                element.parentNode.classList.add(
-                  "ais-Pagination-item--selected",
-                  "current"
-                );
-                displayHits(hits, currentPage, itemsPerPage);
-              });
-            });
-
-            displayHits(hits, currentPage, itemsPerPage);
-          }
+  function showPage(page) {
+    results.replaceChildren();
+    pagination.replaceChildren();
+    const start = (page - 1) * pageSize;
+    for (const hit of matches.slice(start, start + pageSize)) {
+      const link = document.createElement("a");
+      link.className = "reimu-hit-item-link";
+      link.href = hit.url;
+      link.textContent = hit.title;
+      results.append(link);
+    }
+    const pages = Math.ceil(matches.length / pageSize);
+    if (pages > 1) {
+      for (let n = 1; n <= pages; n++) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "page-number";
+        button.textContent = n;
+        button.setAttribute("aria-label", "第 " + n + " 页");
+        if (n === page) button.setAttribute("aria-current", "page");
+        button.addEventListener("click", () => {
+          showPage(n);
+          pagination.querySelector('[aria-current="page"]').focus();
         });
-    })
-    .catch((error) => {
-      console.error(
-        "There has been a problem with your fetch operation:",
-        error
-      );
-    });
-
-  function displayHits(hits, page, itemsPerPage) {
-    searchResult.innerHTML = "";
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    hits.slice(start, end).forEach((hit) => {
-      searchResult.insertAdjacentHTML(
-        "beforeend",
-        `<a href="${hit.url}" class="reimu-hit-item-link">${hit.title}</a>`
-      );
-    });
+        pagination.append(button);
+      }
+    }
+    popup.querySelector(".reimu-results").scrollTop = 0;
   }
 
-  _$(".popup-trigger")
-    .off("click")
-    .on("click", (event) => {
-      event.stopPropagation();
-      const scrollWidth =
-        window.innerWidth - document.documentElement.offsetWidth;
-      _$("#container").style.marginRight = scrollWidth + "px";
-      _$("#header-nav").style.marginRight = scrollWidth + "px";
-      _$(".popup").classList.add("show");
-      _$("#mask").classList.remove("hide");
-      document.body.style.overflow = "hidden";
-      _$("#search-text").focus();
-    });
+  function search() {
+    if (!entries) return;
+    const query = input.value.trim().toLowerCase();
+    matches = query ? entries.filter((entry) => entry.text.includes(query)) : [];
+    matches.sort((a, b) =>
+      Number(b.title.toLowerCase().includes(query)) - Number(a.title.toLowerCase().includes(query))
+    );
+    status.textContent = query
+      ? (matches.length ? "找到 " + matches.length + " 条结果" : "没有找到相关内容")
+      : "";
+    showPage(1);
+  }
 
-  _$(".popup-btn-close")
-    .off("click")
-    .on("click", () => {
-      _$(".popup").classList.remove("show");
-      _$("#mask").classList.add("hide");
-      _$("#container").style.marginRight = "";
-      _$("#header-nav").style.marginRight = "";
-      document.body.style.overflow = "";
-    });
+  async function openSearch() {
+    const gap = window.innerWidth - document.documentElement.clientWidth;
+    document.getElementById("container").style.marginRight = gap + "px";
+    document.getElementById("header-nav").style.marginRight = gap + "px";
+    popup.classList.add("show");
+    mask.classList.remove("hide");
+    document.body.style.overflow = "hidden";
+    input.focus();
+    if (entries) return;
+    status.textContent = "正在读取搜索索引…";
+    try {
+      request ??= fetch(popup.dataset.index).then(async (response) => {
+        if (!response.ok) throw new Error("Search index unavailable");
+        return (await response.json()).map(({ title, url, content }) => ({
+          title: title || url, url, text: [title, content].join("\n").toLowerCase()
+        }));
+      });
+      entries = await request;
+      search();
+    } catch {
+      request = null;
+      status.textContent = "索引暂时无法读取，请关闭后重试。";
+    }
+  }
+
+  function closeSearch() {
+    if (!popup.classList.contains("show")) return;
+    popup.classList.remove("show");
+    mask.classList.add("hide");
+    document.getElementById("container").style.marginRight = "";
+    document.getElementById("header-nav").style.marginRight = "";
+    document.body.style.overflow = "";
+    trigger.focus();
+  }
+
+  trigger.addEventListener("click", openSearch);
+  input.addEventListener("input", search);
+  popup.querySelector(".popup-btn-close").addEventListener("click", closeSearch);
+  document.addEventListener("click", (event) => {
+    if (event.target === mask) closeSearch();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeSearch();
+  });
+  window.addEventListener("pjax:send", closeSearch);
+  window.addEventListener("pagehide", closeSearch);
 })();

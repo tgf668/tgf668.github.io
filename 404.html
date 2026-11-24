@@ -212,24 +212,28 @@
   </div>
 </header>
 
+      <div id="mask" class="hide"></div>
     </div>
   </div>
   
     <div class="site-search">
-      <div class="reimu-popup popup">
-        <div class="reimu-search">
-          <div class="reimu-search-input-icon"></div>
-          <div class="reimu-search-input" id="reimu-search-input"></div>
-          <div class="popup-btn-close"></div>
-        </div>
-        <div class="reimu-results">
-          <div id="reimu-stats"></div>
-          <div id="reimu-hits"></div>
-          <div id="reimu-pagination" class="reimu-pagination"></div>
-        </div>
-        <img class="reimu-bg" src="/images/reimu.png"/>
+  <div class="reimu-popup popup" role="dialog" aria-label="站内搜索" data-index="/search.json">
+    <div class="reimu-search">
+      <div class="reimu-search-input-icon" aria-hidden="true"></div>
+      <div class="reimu-search-input">
+        <input type="search" id="search-text" aria-label="搜索标题或正文" placeholder="搜索标题或正文…" autocomplete="off">
       </div>
+      <button type="button" class="popup-btn-close" aria-label="关闭搜索"></button>
     </div>
+    <div class="reimu-results">
+      <div id="reimu-stats" role="status"></div>
+      <div id="reimu-hits"></div>
+      <nav id="reimu-pagination" class="reimu-pagination" aria-label="搜索结果分页"></nav>
+    </div>
+    <img class="reimu-bg" src="/images/reimu.png" alt="">
+  </div>
+</div>
+
   
   
 <script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
@@ -270,34 +274,8 @@
 
 
 
-
-
-  <script>
-    var ALGOLIA_CONFIG = {
-      logo: "/images/algolia_logo.svg",
-      algolia: {
-        applicationID: "JUZ7GOX38H",
-        apiKey: "8be753c0c3d70de624fc33b8c95d4610",
-        indexName: "AfterRain",
-        hits: {
-          "per_page": parseInt("10")
-        },
-        labels: {
-          "input_placeholder": "搜索.....",
-          "hits_empty": "未发现与 「${query}」相关内容",
-          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
-        }
-      }
-    };
-  </script>
   
-<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js" integrity="sha384-xvLS0jfKuoREs7pqkRI&#x2F;OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk" crossorigin="anonymous" defer></script>
-
-  
-<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js" integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn&#x2F;Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J" crossorigin="anonymous" defer></script>
-
-  
-<script src="/js/algolia_search.js" defer></script>
+<script src="/js/generator_search.js" defer></script>
 
 
 

@@ -59,6 +59,11 @@
     background: currentColor;
 }
 
+.forest-title #logo {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
 #header-title.forest-title #logo h1 {
     font-family: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
     font-size: clamp(1.8rem, 4.4vw, 4.1rem);
@@ -82,7 +87,7 @@
     background: radial-gradient(ellipse, rgba(255, 217, 145, 0.30), transparent 70%);
 }
 
-.forest-index-title #subtitle {
+.forest-title #subtitle {
     font-size: clamp(1.1rem, 1.85vw, 1.6rem);
 }
 
@@ -142,7 +147,8 @@
         animation-play-state: var(--forest-intro-state, running);
     }
 
-    .forest-home-cards {
+    .forest-home-cards,
+    #wrap:has(.forest-home-title) #sidebar {
         animation: forest-cards-enter 650ms ease-out backwards;
         animation-delay: var(--forest-reveal-delay);
         animation-play-state: var(--forest-intro-state, running);
@@ -205,6 +211,7 @@
 
 :root {
     --card-surface: #f5dfa3;
+    --panel-wash: linear-gradient(120deg, #f6e4b3, #f2dda4);
     --card-wash: linear-gradient(120deg, #fff1c6 3%, #f6e1a6 60%, #e5bf81);
     --card-edge: #bd965c;
     --card-shadow: 0 6px 18px rgba(87, 54, 28, 0.15);
@@ -212,6 +219,7 @@
 
 html[data-theme="dark"] {
     --card-surface: #303951;
+    --panel-wash: linear-gradient(115deg, #313b51, #354056);
     --card-wash: radial-gradient(ellipse at 100% 100%, #45516c, transparent 64%),
                  linear-gradient(115deg, #263044, #343f58);
     --card-edge: #62708b;
@@ -222,13 +230,17 @@ html[data-theme="dark"] {
                .sidebar-wrap, .widget-wrap, .article-inner, .archives-outer-wrap,
                .friend-item-wrap, #page-nav, #comments, #header-nav) {
     box-sizing: border-box;
-    background: var(--card-wash) var(--card-surface);
+    background: var(--panel-wash) var(--card-surface);
     border: 1px solid var(--card-edge);
     box-shadow: var(--card-shadow);
 }
 
 #container #header-nav {
     border-width: 0 0 1px;
+    background: var(--panel-wash) var(--card-surface);
+}
+
+#main :is(.post-wrap-left, .post-wrap-right) {
     background: var(--card-wash) var(--card-surface);
 }
 

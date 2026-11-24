@@ -72,7 +72,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://golden-forest.top/a0d5946d12effca7e146e32c242c3067.png">
 <meta property="article:published_time" content="2025-12-08T01:02:25.000Z">
-<meta property="article:modified_time" content="2025-12-08T11:49:11.502Z">
+<meta property="article:modified_time" content="2026-11-24T09:36:21.000Z">
 <meta property="article:author" content="SkipShot">
 <meta property="article:tag" content="FuzzingBook">
 <meta name="twitter:card" content="summary">
@@ -238,20 +238,20 @@
   
   <div id="header-outer">
     
-    <div id="header-title">
+    <div id="header-title" class="forest-title">
       
         
         
           
             <a href="/" id="logo">
-              <h1 data-aos="slide-up">[Learn] FuzzingBook - Part I: Whetting Your Appetite</h1>
+              <h1>[Learn] FuzzingBook - Part I: Whetting Your Appetite</h1>
             </a>
           
         
       
       
         
-        <h2 id="subtitle-wrap" data-aos="slide-down">
+        <h2 id="subtitle-wrap">
           
         </h2>
       
@@ -366,7 +366,7 @@
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-12-08T01:02:25.000Z" itemprop="datePublished">2025-12-08</time>
-    <time style="display: none;" id="post-update-time">2025-12-08</time>
+    <time style="display: none;" id="post-update-time">2026-11-24</time>
   </span>
 </div>
 
@@ -656,20 +656,23 @@
     </div>
     
       <div class="site-search">
-        <div class="reimu-popup popup">
-          <div class="reimu-search">
-            <div class="reimu-search-input-icon"></div>
-            <div class="reimu-search-input" id="reimu-search-input"></div>
-            <div class="popup-btn-close"></div>
-          </div>
-          <div class="reimu-results">
-            <div id="reimu-stats"></div>
-            <div id="reimu-hits"></div>
-            <div id="reimu-pagination" class="reimu-pagination"></div>
-          </div>
-          <img class="reimu-bg" src="/images/reimu.png"/>
-        </div>
+  <div class="reimu-popup popup" role="dialog" aria-label="站内搜索" data-index="/search.json">
+    <div class="reimu-search">
+      <div class="reimu-search-input-icon" aria-hidden="true"></div>
+      <div class="reimu-search-input">
+        <input type="search" id="search-text" aria-label="搜索标题或正文" placeholder="搜索标题或正文…" autocomplete="off">
       </div>
+      <button type="button" class="popup-btn-close" aria-label="关闭搜索"></button>
+    </div>
+    <div class="reimu-results">
+      <div id="reimu-stats" role="status"></div>
+      <div id="reimu-hits"></div>
+      <nav id="reimu-pagination" class="reimu-pagination" aria-label="搜索结果分页"></nav>
+    </div>
+    <img class="reimu-bg" src="/images/reimu.png" alt="">
+  </div>
+</div>
+
     
     
     
@@ -712,34 +715,8 @@
 
 
 
-
-
-  <script>
-    var ALGOLIA_CONFIG = {
-      logo: "/images/algolia_logo.svg",
-      algolia: {
-        applicationID: "JUZ7GOX38H",
-        apiKey: "8be753c0c3d70de624fc33b8c95d4610",
-        indexName: "AfterRain",
-        hits: {
-          "per_page": parseInt("10")
-        },
-        labels: {
-          "input_placeholder": "搜索.....",
-          "hits_empty": "未发现与 「${query}」相关内容",
-          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
-        }
-      }
-    };
-  </script>
   
-<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js" integrity="sha384-xvLS0jfKuoREs7pqkRI&#x2F;OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk" crossorigin="anonymous" defer></script>
-
-  
-<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js" integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn&#x2F;Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J" crossorigin="anonymous" defer></script>
-
-  
-<script src="/js/algolia_search.js" defer></script>
+<script src="/js/generator_search.js" defer></script>
 
 
 
@@ -921,7 +898,7 @@
           description: "",
           stripContent: " 前言  本文参考以下网站中的内容进行有关fuzzing的知识，本文做后续程序设计参考及复习所用： https://www.fuzzingbook.org/  由于原文拥有着超长的文本内容加上超多的代码，想要用一篇文章写完基本上是不可能的（一时半会也看不完），所以我将以书中的章节为分割，每篇文章记录学习记录。 每篇文章按照&amp;quot;大标题 + 小标题&amp;quot;的形式介绍，文本内容按照以下规范：  正常文本 为作者笔记，包含内容解释或者某些启发等等，按照先原文、后笔记的对照方式 斜体文本 皆为",
           date: "Mon Dec 08 2025 09:02:25 GMT+0800",
-          updated: "Mon Dec 08 2025 19:49:11 GMT+0800",
+          updated: "Tue Nov 24 2026 17:36:21 GMT+0800",
           cover: "https://golden-forest.top/2711701d4bbe93a94aa5aa66fc9d46c9.jpg",
         };
       </script>

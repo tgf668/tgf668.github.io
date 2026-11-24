@@ -71,7 +71,7 @@
 <meta property="og:description" content="就像刚刚学打字的样子">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-18T11:27:50.000Z">
-<meta property="article:modified_time" content="2025-10-19T16:38:52.000Z">
+<meta property="article:modified_time" content="2026-11-24T09:36:21.000Z">
 <meta property="article:author" content="SkipShot">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -236,20 +236,20 @@
   
   <div id="header-outer">
     
-    <div id="header-title">
+    <div id="header-title" class="forest-title">
       
         
         
           
             <a href="/" id="logo">
-              <h1 data-aos="slide-up">[Learn] Vim操作学习笔记</h1>
+              <h1>[Learn] Vim操作学习笔记</h1>
             </a>
           
         
       
       
         
-        <h2 id="subtitle-wrap" data-aos="slide-down">
+        <h2 id="subtitle-wrap">
           
         </h2>
       
@@ -364,7 +364,7 @@
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-08-18T11:27:50.000Z" itemprop="datePublished">2025-08-18</time>
-    <time style="display: none;" id="post-update-time">2025-10-20</time>
+    <time style="display: none;" id="post-update-time">2026-11-24</time>
   </span>
 </div>
 
@@ -626,20 +626,23 @@
     </div>
     
       <div class="site-search">
-        <div class="reimu-popup popup">
-          <div class="reimu-search">
-            <div class="reimu-search-input-icon"></div>
-            <div class="reimu-search-input" id="reimu-search-input"></div>
-            <div class="popup-btn-close"></div>
-          </div>
-          <div class="reimu-results">
-            <div id="reimu-stats"></div>
-            <div id="reimu-hits"></div>
-            <div id="reimu-pagination" class="reimu-pagination"></div>
-          </div>
-          <img class="reimu-bg" src="/images/reimu.png"/>
-        </div>
+  <div class="reimu-popup popup" role="dialog" aria-label="站内搜索" data-index="/search.json">
+    <div class="reimu-search">
+      <div class="reimu-search-input-icon" aria-hidden="true"></div>
+      <div class="reimu-search-input">
+        <input type="search" id="search-text" aria-label="搜索标题或正文" placeholder="搜索标题或正文…" autocomplete="off">
       </div>
+      <button type="button" class="popup-btn-close" aria-label="关闭搜索"></button>
+    </div>
+    <div class="reimu-results">
+      <div id="reimu-stats" role="status"></div>
+      <div id="reimu-hits"></div>
+      <nav id="reimu-pagination" class="reimu-pagination" aria-label="搜索结果分页"></nav>
+    </div>
+    <img class="reimu-bg" src="/images/reimu.png" alt="">
+  </div>
+</div>
+
     
     
     
@@ -682,34 +685,8 @@
 
 
 
-
-
-  <script>
-    var ALGOLIA_CONFIG = {
-      logo: "/images/algolia_logo.svg",
-      algolia: {
-        applicationID: "JUZ7GOX38H",
-        apiKey: "8be753c0c3d70de624fc33b8c95d4610",
-        indexName: "AfterRain",
-        hits: {
-          "per_page": parseInt("10")
-        },
-        labels: {
-          "input_placeholder": "搜索.....",
-          "hits_empty": "未发现与 「${query}」相关内容",
-          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
-        }
-      }
-    };
-  </script>
   
-<script src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js" integrity="sha384-xvLS0jfKuoREs7pqkRI&#x2F;OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk" crossorigin="anonymous" defer></script>
-
-  
-<script src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js" integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn&#x2F;Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J" crossorigin="anonymous" defer></script>
-
-  
-<script src="/js/algolia_search.js" defer></script>
+<script src="/js/generator_search.js" defer></script>
 
 
 
@@ -891,7 +868,7 @@
           description: "",
           stripContent: " 前言 Vim什么的，最喜欢了！  正文  基础操作 12345678910111213141516h 左j 下k 上l 右v 选取模式:!command 执行外部命令command:r File 将读取到的内容复制到光标处:r !command 将外部command命令执行后返回的内容复制到光标处:q! 不保存退出:wq 保存退出:w FileName 将文件以FileName的名字保存在当前路径下:s/old/new 将光标所在行的第一个old的内容替换为new:s/old/new/g 将光",
           date: "Mon Aug 18 2025 19:27:50 GMT+0800",
-          updated: "Mon Oct 20 2025 00:38:52 GMT+0800",
+          updated: "Tue Nov 24 2026 17:36:21 GMT+0800",
           cover: "https://golden-forest.top/2025/09/32fe6583a58afd297b42bfb13f6bd6f4.jpg",
         };
       </script>

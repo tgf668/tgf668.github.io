@@ -113,14 +113,6 @@
   font-family: var(--font-icon);
   content: "\f002";
 }
-.ais-pagination--item__previous a:before {
-  font-family: var(--font-icon);
-  content: "\f104";
-}
-.ais-pagination--item__next a:before {
-  font-family: var(--font-icon);
-  content: "\f105";
-}
 .icon-github:before {
   content: "\f09b";
 }
