@@ -56,9 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const toggleLeaves = () => {
-        toggleBtn.hidden = !document.querySelector('.forest-home-title');
         toggleBtn.setAttribute('aria-pressed', String(isLeavesEnabled));
-        if (isLeavesEnabled && !toggleBtn.hidden) {
+        if (isLeavesEnabled) {
             if (!leafInterval) {
                 // Generate a leaf every 150ms for a dense forest effect
                 leafInterval = setInterval(createLeaf, 150);
@@ -85,6 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleLeaves();
     });
 
-    window.addEventListener('pjax:complete', toggleLeaves);
     toggleLeaves();
+    toggleBtn.hidden = false;
 });

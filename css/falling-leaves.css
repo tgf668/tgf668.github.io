@@ -59,7 +59,7 @@
     background: currentColor;
 }
 
-#header-title.forest-home-title #logo h1 {
+#header-title.forest-title #logo h1 {
     font-family: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
     font-size: clamp(1.8rem, 4.4vw, 4.1rem);
     line-height: 1.2;
@@ -70,6 +70,103 @@
     background: none;
     animation: none;
     text-shadow: 0 2px 3px #4b2a16, 0 4px 18px #543211;
+}
+
+/* Keep the light behind the lettering and let the forest show through. */
+.forest-title #logo::before {
+    content: "";
+    position: absolute;
+    inset: -30% -4%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse, rgba(255, 217, 145, 0.30), transparent 70%);
+}
+
+.forest-index-title #subtitle {
+    font-size: clamp(1.1rem, 1.85vw, 1.6rem);
+}
+
+@keyframes forest-title-focus {
+    from { opacity: 0; filter: blur(8px); }
+    to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes forest-title-settle {
+    from { transform: translateY(calc(49px - 50%)) scale(var(--forest-opening-scale)); }
+    to { transform: translateY(-20%) scale(1); }
+}
+
+@keyframes forest-cards-enter {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+}
+
+@keyframes forest-letter-appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#main-nav .main-nav-link:focus-visible {
+    opacity: 1;
+    outline: 2px solid currentColor;
+    outline-offset: -4px;
+}
+
+@media (hover: hover) {
+    #main-nav .main-nav-link-wrap:hover .main-nav-link {
+        opacity: 1;
+        text-shadow: 0 1px 7px rgba(194, 119, 55, 0.28);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #container {
+        --forest-title-delay: 160ms;
+        --forest-title-duration: 1800ms;
+        --forest-reveal-delay: calc(var(--forest-title-delay) + var(--forest-title-duration));
+        --forest-opening-scale: 1.26;
+    }
+
+    /* The loader opens on DOM ready and again after PJAX navigation. */
+    #loader:not(.loading) ~ #container {
+        --forest-intro-state: paused;
+    }
+
+    #header-title.forest-home-title #logo h1 {
+        animation: forest-title-focus var(--forest-title-duration) ease-in-out var(--forest-title-delay) backwards;
+        animation-play-state: var(--forest-intro-state, running);
+    }
+
+    .forest-home-title #logo {
+        animation: forest-title-settle 1900ms cubic-bezier(.22, .7, .25, 1) var(--forest-reveal-delay) backwards;
+        animation-play-state: var(--forest-intro-state, running);
+    }
+
+    .forest-home-cards {
+        animation: forest-cards-enter 650ms ease-out backwards;
+        animation-delay: var(--forest-reveal-delay);
+        animation-play-state: var(--forest-intro-state, running);
+    }
+
+    .forest-home-title #subtitle span {
+        animation: forest-letter-appear 1ms step-end backwards;
+        animation-delay: calc(var(--forest-reveal-delay) + var(--letter-index) * 105ms);
+        animation-play-state: var(--forest-intro-state, running);
+    }
+}
+
+@media (max-width: 600px) {
+    .forest-home-title { --forest-opening-scale: 1.08; }
+}
+
+@media (max-width: 350px) {
+    .forest-home-title { --forest-opening-scale: 1.04; }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    #main-nav .main-nav-link-wrap:hover .main-nav-link {
+        transform: translateY(-2px) scale(1.1);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -106,37 +203,73 @@
     }
 }
 
-/* 卡片柔和渐变与阴影优化 (全方位毛玻璃效果) */
-
-.article-inner, 
-.post-wrap-left, 
-.post-wrap-right, 
-.widget-wrap, 
-.sidebar-wrap, 
-.archives-outer-wrap, 
-#page-nav,
-.friend-card-item,
-#comments {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.45) 100%) !important;
-    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease !important;
+:root {
+    --card-surface: #f5dfa3;
+    --card-wash: linear-gradient(120deg, #fff1c6 3%, #f6e1a6 60%, #e5bf81);
+    --card-edge: #bd965c;
+    --card-shadow: 0 6px 18px rgba(87, 54, 28, 0.15);
 }
 
-html[data-theme="dark"] .article-inner, 
-html[data-theme="dark"] .post-wrap-left, 
-html[data-theme="dark"] .post-wrap-right, 
-html[data-theme="dark"] .widget-wrap, 
-html[data-theme="dark"] .sidebar-wrap, 
-html[data-theme="dark"] .archives-outer-wrap, 
-html[data-theme="dark"] #page-nav,
-html[data-theme="dark"] .friend-card-item,
-html[data-theme="dark"] #comments {
-    background: linear-gradient(135deg, rgba(40, 44, 48, 0.85) 0%, rgba(25, 27, 30, 0.5) 100%) !important;
-    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+html[data-theme="dark"] {
+    --card-surface: #303951;
+    --card-wash: radial-gradient(ellipse at 100% 100%, #45516c, transparent 64%),
+                 linear-gradient(115deg, #263044, #343f58);
+    --card-edge: #62708b;
+    --card-shadow: 0 8px 22px rgba(7, 14, 30, 0.4);
+}
+
+#container :where(.post-wrap-left, .post-wrap-right, .post-categories-wrap,
+               .sidebar-wrap, .widget-wrap, .article-inner, .archives-outer-wrap,
+               .friend-item-wrap, #page-nav, #comments, #header-nav) {
+    box-sizing: border-box;
+    background: var(--card-wash) var(--card-surface);
+    border: 1px solid var(--card-edge);
+    box-shadow: var(--card-shadow);
+}
+
+#container #header-nav {
+    border-width: 0 0 1px;
+    background: var(--card-wash) var(--card-surface);
+}
+
+#main .post-info {
+    position: relative;
+    pointer-events: none;
+    background: url("../images/autumn-branch.png") right 10px bottom 5px / 74px auto no-repeat;
+}
+
+html[data-theme="dark"] #main .post-info {
+    background: none;
+}
+
+html[data-theme="dark"] #main .post-info::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    width: 96px;
+    height: 60px;
+    opacity: 0.65;
+    background:
+        radial-gradient(ellipse 1px 4px at 28% 64%, #ffe5ac 80%, transparent),
+        radial-gradient(ellipse 4px 1px at 28% 64%, #ffe5ac 80%, transparent),
+        radial-gradient(circle 1.5px at 48% 39%, #c8d9f2 90%, transparent),
+        radial-gradient(circle 1px at 16% 46%, #dce2ff 90%, transparent),
+        radial-gradient(circle 1.5px at 55% 78%, #ffdfa3 90%, transparent),
+        radial-gradient(circle 1px at 90% 33%, #dce2ff 90%, transparent);
+}
+
+html[data-theme="dark"] #main .post-info::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: 23px;
+    bottom: 26px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: -4px 3px 0 #e9d9b3;
+    pointer-events: none;
 }
 
 /* --- Heading and Title Soft Color Tweaks --- */
