@@ -80,37 +80,30 @@ window.throttle = (func, limit) => {
 
   const osMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
   function setTheme(config) {
-    const isAuto = config === "auto";
-    const isDark = config === "true" || (isAuto && osMode);
+    const isDark = config === "true";
 
-    document.documentElement.setAttribute("data-theme", isDark ? "dark" : null);
-    localStorage.setItem("dark_mode", config);
-
-    themeButton.id = `nav-${
-      config === "true"
-        ? "moon"
-        : config === "false"
-        ? "sun"
-        : "circle-half-stroke"
-    }-btn`;
+    document.documentElement.dataset.theme = isDark ? "dark" : "light";
+    localStorage.setItem("dark_mode", isDark ? "true" : "false");
+    themeButton.id = isDark ? "nav-moon-btn" : "nav-sun-btn";
 
     document.body.dispatchEvent(
-      new CustomEvent(`${isDark ? "dark" : "light"}-theme-set`)
+      new CustomEvent((isDark ? "dark" : "light") + "-theme-set")
     );
   }
-  const savedMode =
-    localStorage.getItem("dark_mode") ||
-    document.documentElement.getAttribute("data-theme-mode") ||
-    "auto";
-  setTheme(savedMode);
+
+  const savedMode = localStorage.getItem("dark_mode");
+  const initialMode =
+    savedMode === "true" || savedMode === "false"
+      ? savedMode
+      : osMode
+      ? "true"
+      : "false";
+  setTheme(initialMode);
 
   themeButton.addEventListener(
     "click",
     throttle(() => {
-      const modes = ["auto", "false", "true"];
-      const nextMode =
-        modes[(modes.indexOf(localStorage.getItem("dark_mode")) + 1) % 3];
-      setTheme(nextMode);
+      setTheme(localStorage.getItem("dark_mode") === "true" ? "false" : "true");
     }, 1000)
   );
 

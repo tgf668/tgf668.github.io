@@ -65,10 +65,6 @@
   font-family: var(--font-icon);
   content: "\f186";
 }
-#nav-circle-half-stroke-btn:before {
-  font-family: var(--font-icon);
-  content: "\f042";
-}
 #nav-language-btn:before {
   font-family: var(--font-icon);
   content: "\f1ab";

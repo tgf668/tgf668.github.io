@@ -305,10 +305,6 @@ body [data-aos='zoom-in'] {
   font-family: "iconfont";
   content: "\e617";
 }
-#nav-circle-half-stroke-btn:before {
-  font-family: "iconfont";
-  content: "\e641";
-}
 #nav-language-btn:before {
   font-family: "iconfont";
   content: "\e642";
@@ -819,8 +815,7 @@ a {
   align-items: center;
 }
 #nav-sun-btn:before,
-#nav-moon-btn:before,
-#nav-circle-half-stroke-btn:before {
+#nav-moon-btn:before {
   font-weight: 700;
 }
 #i18n-nav {
@@ -1904,6 +1899,18 @@ a {
 }
 .archives-category-list-link:before {
   font-weight: 700;
+}
+.archives-tag-list-item.is-current,
+.archives-category-list-item.is-current {
+  background: var(--red-1);
+  box-shadow: 0 0 8px var(--color-red-6-shadow);
+}
+.archives-tag-list-item.is-current .archives-tag-list-link,
+.archives-category-list-item.is-current .archives-tag-list-link,
+.archives-tag-list-item.is-current .archives-category-list-link,
+.archives-category-list-item.is-current .archives-category-list-link {
+  color: #fff;
+  opacity: 1;
 }
 #footer {
   background-color: linear-gradient(to top, var(--color-footer-background) 50%, transparent);
