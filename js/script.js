@@ -71,6 +71,28 @@ window.throttle = (func, limit) => {
   window._$ = (selector) => document.querySelector(selector);
   window._$$ = (selector) => document.querySelectorAll(selector);
 
+  const uptime = document.getElementById("site-uptime");
+  if (uptime) {
+    const start = Date.parse(uptime.dataset.start);
+    const copyrightYear = document.getElementById("copyright-year");
+    const yearFormat = new Intl.DateTimeFormat("en", {
+      year: "numeric", timeZone: copyrightYear?.dataset.timezone || undefined
+    });
+    function updateUptime() {
+      const now = Date.now();
+      const year = yearFormat.format(now);
+      if (copyrightYear && copyrightYear.textContent !== year) copyrightYear.textContent = year;
+      const seconds = Math.max(0, Math.floor((now - start) / 1000));
+      const days = Math.floor(seconds / 86400);
+      const pad = value => String(value).padStart(2, "0");
+      const hours = pad(Math.floor(seconds / 3600) % 24);
+      const minutes = pad(Math.floor(seconds / 60) % 60);
+      uptime.textContent = `${days}天${hours}时${minutes}分${pad(seconds % 60)}秒`;
+      setTimeout(updateUptime, 1000 - Date.now() % 1000);
+    }
+    updateUptime();
+  }
+
   // dark_mode
   const themeButton = document.createElement("button");
   themeButton.type = "button";

@@ -178,8 +178,15 @@
     
       <button type="button" id="nav-search-btn" class="nav-icon popup-trigger" aria-label="搜索" title="搜索"></button>
     
-    <button type="button" id="nav-leaves-btn" class="nav-icon" title="落叶效果" aria-label="落叶效果" aria-pressed="false" hidden>
-      <span class="nav-leaf" aria-hidden="true"></span>
+    <button type="button" id="nav-leaves-btn" class="nav-icon" title="网页效果" aria-label="切换天气效果" hidden>
+      <span class="nav-leaf" data-mode="leaves" aria-hidden="true"></span>
+      <svg data-mode="rain" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7 14a4.5 4.5 0 0 1-.5-9 6 6 0 0 1 11.1 1.8A3.6 3.6 0 0 1 18 14Z M8 17l-1.5 3 M13 17l-1.5 3 M18 17l-1.5 3"/>
+      </svg>
+      <svg data-mode="off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="2" y="3" width="20" height="14" rx="2"/>
+        <path d="M12 17v4 M7 21h10"/>
+      </svg>
     </button>
   </nav>
   

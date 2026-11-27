@@ -223,8 +223,15 @@
     
       <button type="button" id="nav-search-btn" class="nav-icon popup-trigger" aria-label="搜索" title="搜索"></button>
     
-    <button type="button" id="nav-leaves-btn" class="nav-icon" title="落叶效果" aria-label="落叶效果" aria-pressed="false" hidden>
-      <span class="nav-leaf" aria-hidden="true"></span>
+    <button type="button" id="nav-leaves-btn" class="nav-icon" title="网页效果" aria-label="切换天气效果" hidden>
+      <span class="nav-leaf" data-mode="leaves" aria-hidden="true"></span>
+      <svg data-mode="rain" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7 14a4.5 4.5 0 0 1-.5-9 6 6 0 0 1 11.1 1.8A3.6 3.6 0 0 1 18 14Z M8 17l-1.5 3 M13 17l-1.5 3 M18 17l-1.5 3"/>
+      </svg>
+      <svg data-mode="off" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="2" y="3" width="20" height="14" rx="2"/>
+        <path d="M12 17v4 M7 21h10"/>
+      </svg>
     </button>
   </nav>
   
@@ -360,22 +367,24 @@
 
           <section id="main"><article id="post-Writing-25-12-23" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
-    <div class="article-meta">
-      <div class="article-date">
+    
+      <div class="article-meta">
+        <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-12-23T15:57:44.000Z" itemprop="datePublished">2025-12-23</time>
     <time style="display: none;" id="post-update-time">2026-04-14</time>
   </span>
 </div>
 
-      
+        
   <div class="article-category">
     <a class="article-category-link" href="/categories/Writing/" data-aos="zoom-in">Writing</a>
   </div>
 
 
-    </div>
-    <div class="hr-line"></div>
+      </div>
+      <div class="hr-line"></div>
+    
     
 
     <div class="e-content article-entry" itemprop="articleBody">
@@ -496,11 +505,7 @@
     
     <div>
       <span class="icon-copyright"></span>
-      
-      
-      
-        2025-2026
-      
+      <span>2025-<span id="copyright-year" data-timezone="Asia/Shanghai">2026</span></span>
       <span class="footer-info-sep "></span>
       SkipShot
     </div>
@@ -512,24 +517,27 @@
     
     
       <div>
+        <svg class="footer-post-icon" viewBox="0 0 16 16" role="img" aria-label="文章">
+          <path d="M3 1.5h6.5L13 5v9.5H3z M9 1.5v4h4 M5.5 8h5 M5.5 10.5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        18
+        &nbsp;|&nbsp;
         <span class="icon-brush"></span>
         28.9k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        01:47
+        01:48
       </div>
     
     
     
-    
-      <div>
-        <span class="icon-eye"></span>
-        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
-        &nbsp;|&nbsp;
-        <span class="icon-user"></span>
-        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
-      </div>
-    
+    <div class="footer-stats">
+      <span><span class="icon-clock" aria-hidden="true"></span> 运行时间 <span id="site-uptime" data-start="2025-03-31T00:00:00+08:00"><noscript>自 2025 年 3 月 31 日起</noscript></span></span>
+      
+        <span><span class="icon-eye"></span><span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span></span>
+        <span><span class="icon-user"></span><span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span></span>
+      
+    </div>
   </div>
 </footer>
 

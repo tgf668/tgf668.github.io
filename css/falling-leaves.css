@@ -55,8 +55,24 @@
     transform-origin: left center;
 }
 
-#nav-leaves-btn[aria-pressed="true"] .nav-leaf {
-    background: currentColor;
+#nav-leaves-btn [data-mode] {
+    display: none;
+}
+
+#nav-leaves-btn[data-weather="leaves"] .nav-leaf,
+#nav-leaves-btn[data-weather="rain"] [data-mode="rain"],
+#nav-leaves-btn[data-weather="off"] [data-mode="off"] {
+    display: block;
+}
+
+#nav-leaves-btn svg {
+    width: 1.05em;
+    height: 1.05em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .forest-title #logo {
@@ -185,13 +201,76 @@
     }
 }
 
-.falling-leaf {
+.weather-layer {
     position: fixed;
-    top: -30px;
+    inset: 0;
+    overflow: hidden;
     pointer-events: none;
     z-index: -1;
+}
+
+.falling-leaf {
+    position: absolute;
+    top: -30px;
+    aspect-ratio: 1;
     border-radius: 0 50% 0 50%;
     opacity: 0.7;
+    animation: fall var(--duration) linear var(--delay) infinite,
+               sway var(--sway) ease-in-out var(--delay) infinite alternate;
+}
+
+.rain-streak {
+    position: absolute;
+    top: -28px;
+    width: 1px;
+    height: 24px;
+    background: linear-gradient(transparent, rgba(111, 147, 170, .42) 70%, rgba(235, 248, 255, .78));
+    animation: weather-rain-fall var(--duration) linear var(--delay) infinite;
+}
+
+.glass-drop {
+    position: absolute;
+    aspect-ratio: .74;
+    border-radius: 55% 60% 48% 52%;
+    background: radial-gradient(ellipse at 32% 23%, #fffd, transparent 40%),
+                linear-gradient(145deg, #effaff22, #657c9544 65%, #e6f5ff99);
+    box-shadow: inset 0 -1px 1px #50687f88, 0 1px 2px #42516a44;
+    animation: weather-glass-slide var(--duration) ease-in-out var(--delay) infinite;
+}
+
+.glass-drop::before {
+    content: "";
+    position: absolute;
+    bottom: 85%;
+    left: 34%;
+    width: 30%;
+    height: calc(var(--slide) * .45);
+    transform-origin: bottom;
+    background: linear-gradient(transparent, #dbefff66);
+    animation: weather-glass-trail var(--duration) ease-in-out var(--delay) infinite;
+}
+
+@keyframes weather-rain-fall {
+    from { transform: translate(2vw, 0) rotate(3deg); }
+    to { transform: translate(-3vw, calc(100vh + 32px)) rotate(3deg); }
+}
+
+@keyframes weather-glass-slide {
+    0%, 100% { opacity: 0; }
+    15%, 42% { opacity: .85; transform: translate(0, 0) scale(.85); }
+    62%, 74% { opacity: .95; transform: translate(1px, calc(var(--slide) * .28)); }
+    96%, 100% { transform: translate(-2px, var(--slide)) scale(.95, 1.15); }
+}
+
+@keyframes weather-glass-trail {
+    0%, 42% { transform: scaleY(0); }
+    62%, 74% { transform: scaleY(.4); }
+    96%, 100% { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .weather-layer i, .weather-layer i::before { animation: none; }
+    .glass-drop::before { display: none; }
 }
 
 @keyframes fall {
